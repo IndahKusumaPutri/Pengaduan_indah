@@ -25,7 +25,7 @@ class PengaduanController extends Controller
      */
     public function create()
     {
-        return view('Pengaduan.create');
+        return view('pengaduan.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class PengaduanController extends Controller
 
         Pengaduan::create($request->all()); 
 
-        return redirect()->route('Pengaduan.index')->with('Data ditambah','Data berhasil ditambah');
+        return redirect()->route('pengaduan.index')->with('Data ditambah','Data berhasil ditambah');
     }
 
     /**
@@ -91,6 +91,7 @@ class PengaduanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pengaduan::where('id_pengaduan', $id)->delete();
+        return redirect('pengaduan.index');
     }
 }
