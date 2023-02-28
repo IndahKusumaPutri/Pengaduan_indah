@@ -15,7 +15,7 @@ class PengaduanController extends Controller
     public function index()
     {
         $pengaduan = Pengaduan::all();
-        return view('pengaduan.index',compact('pengaduan'));
+        return view('pengaduan.index', compact('pengaduan'));
     }
 
     /**
@@ -36,7 +36,7 @@ class PengaduanController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'tgl_pengaduan' => 'required',
             'nik'           => 'required',
             'isi_laporan'   => 'required',
@@ -44,9 +44,15 @@ class PengaduanController extends Controller
             'status'        => 'required'
         ]);
 
-        Pengaduan::create($request->all()); 
+        Pengaduan::create($request, [
+            'tgl_pengaduan' => $request->tgl_pengaduan,
+            'nik'           => $request->nik,
+            'isi_laporan'   => $request->isi_laporan,
+            'foto'          => $request->foto,
+            'status'        => $request->status
+        ]);
 
-        return redirect()->route('pengaduan.index')->with('Data ditambah','Data berhasil ditambah');
+        return redirect()->route('pengaduan.index')->with('Data ditambah', 'Data berhasil ditambah');
     }
 
     /**
@@ -68,7 +74,8 @@ class PengaduanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pengaduan = Pengaduan::all();
+        return view('pengaduan.edit', compact('pengaduan'));
     }
 
     /**
@@ -80,7 +87,28 @@ class PengaduanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $message = ([
+            'required'  => "Data tidak boleh kosong!",
+            'numeric'   => "Harus berupa angka"
+        ]);
+
+        $this->validate($request, [
+            'tgl_pengaduan' => 'required',
+            'nik'           => 'required',
+            'isi_laporan'   => 'required',
+            'foto'          => 'required',
+            'status'        => 'required'
+        ], $message);
+
+        Pengaduan::where('id_pengaduan', $id)->update([
+            'tgl_pengaduan' => $request->tgl_pengaduan,
+            'nik'           => $request->nik,
+            'isi_laporan'   => $request->isi_laporan,
+            'foto'          => $request->foto,
+            'status'        => $request->status
+        ]);
+
+        return redirect()->route('pengaduan.index')->with('Data diedit', 'Data berhasil diedit');
     }
 
     /**

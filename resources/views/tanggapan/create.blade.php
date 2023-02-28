@@ -36,17 +36,6 @@
                                                     <div class="card-body">
                                                         <form class="form-horizontal" action="/tanggapan/store" method="post">
                                                             {{ csrf_field() }}
-                                                            <!-- <div class="form-group row">
-                                                                <label class="control-label col-sm-2">ID Pengaduan</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="id_pengaduan">
-                                                                    @if ($errors->has('id_pengaduan'))
-                                                                        <div class="text-danger">
-                                                                            {{ $errors->first('id_pengaduan') }}
-                                                                        </div>
-                                                                    @endif
-                                                                </div>
-                                                            </div> -->
                                                             <div class="form-group row">
                                                                 <label class="control-label col-sm-2">Tanggal Tanggapan</label>
                                                                 <div class="col-sm-10">
