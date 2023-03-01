@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'HomeController@index');
 
 //pengaduan
 Route::get('pengaduan', 'PengaduanController@index')->name('pengaduan.index');

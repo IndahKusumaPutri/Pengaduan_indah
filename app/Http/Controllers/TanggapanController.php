@@ -36,10 +36,15 @@ class TanggapanController extends Controller
      */
     public function store(Request $request)
     {
+        $message = ([
+            'required'  => "Data tidak boleh kosong!",
+            'numeric'   => "Harus berupa angka"
+        ]);
+
         $this->validate($request, [
             'tgl_tanggapan' => 'required',
             'tanggapan'     => 'required',
-            'nik'           => 'required'
+            'nik'           => 'required|numerik:11'
         ]);
 
         // Tanggapan::create($request, [
@@ -106,7 +111,7 @@ class TanggapanController extends Controller
 
         // Tanggapan::where('id_tanggapan', $id)->update($request->all());
 
-        return redirect()->route('pengaduan.index')->with('Data diedit','Data berhasil diedit');
+        return redirect()->route('tanggapan.index')->with('Data diedit','Data berhasil diedit');
     }
 
     /**

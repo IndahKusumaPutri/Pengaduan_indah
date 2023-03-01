@@ -16,7 +16,7 @@
     <div class="container">
         <div class="card mt-5">
             <div class="card-header text-center">
-                Masukkan Pengaduan
+                Masukkan Tanggapan
             </div>
             <div class="card-body">
                 <!-- <a href="/pengaduan" class="btn btn-primary">Kembali</a> -->
