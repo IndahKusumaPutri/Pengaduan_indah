@@ -18,7 +18,7 @@
                 Masukkan Pengaduan
             </div>
             <div class="card-body">
-                <a href="/pengaduan" class="btn btn-primary">Kembali</a>
+                <!-- <a href="/pengaduan" class="btn btn-primary">Kembali</a> -->
 
                 <form class="form-horizontal" action="/pengaduan/store" method="post"> {{ csrf_field() }}
 

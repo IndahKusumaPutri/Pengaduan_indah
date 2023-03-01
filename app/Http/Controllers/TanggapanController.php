@@ -72,7 +72,9 @@ class TanggapanController extends Controller
      */
     public function edit($id)
     {
-        $tanggapan = Tanggapan::all();
+        // $tanggapan = Tanggapan::all();
+
+        $tanggapan = Tanggapan::where('id_tanggapan', $id)->first();
         return view('tanggapan.edit', compact('tanggapan'));
     }
 

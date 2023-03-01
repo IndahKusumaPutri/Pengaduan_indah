@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-  <title>Pengkat</title>
+  <title>Tanggapan</title>
 </head>
 
 <body>
   <div class="container">
     <div class="card mt-5">
       <div class="card-header text-center">
-        Ubah Pengaduan
+        Ubah Tanggapan
       </div>
       <div class="card-body">
-        <a href="/tanggapan" class="btn btn-primary">Kembali</a>
+        <!-- <a href="/tanggapan" class="btn btn-primary">Kembali</a> -->
 
         <!-- <form method="post" action="/tanggapan/update/{{ $tanggapan->id_tanggapan }}">
           {{ csrf_field() }}
           {{ method_field('PUT') }} -->
 
-          <form class="form-horizontal" action="/tanggapan/edit/{{ $tanggapan->id_tanggapan }}" method="post"> {{ csrf_field() }}
-            <input type="hidden" name="_method" value="POST"> 
+          <form class="form-horizontal" action="/tanggapan/update/{{ $tanggapan->id_tanggapan }}" method="put"> {{ csrf_field() }}
+            <input type="hidden" name="_method" value="post"> 
 
           <div class="form-group row">
             <label class="control-label col-sm-2">Tanggal Tanggapan</label>
@@ -58,4 +58,3 @@
 </body>
 
 </html>
-@endsection

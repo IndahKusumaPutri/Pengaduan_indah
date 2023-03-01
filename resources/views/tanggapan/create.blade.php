@@ -19,7 +19,7 @@
                 Masukkan Pengaduan
             </div>
             <div class="card-body">
-                <a href="/pengaduan" class="btn btn-primary">Kembali</a>
+                <!-- <a href="/pengaduan" class="btn btn-primary">Kembali</a> -->
 
                 <div class="card-body">
 
