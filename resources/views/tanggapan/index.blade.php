@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-    <title>Pengkat</title>
+    <title>Tanggapan</title>
 </head>
 
 <body>
@@ -36,12 +36,13 @@
                         Tanggapan
                     </div>
                     <div class="card-body">
-                        <a href="/tanggapan/create" class="btn btn-primary">Laporkan Masalah Anda</a>
+                        <a href="/tanggapan/create" class="btn btn-primary">Beri Tanggapan</a>
+                        <br />
+                        <br />
                         <table class="table table-bordered table-hover table-striped">
                             <thead>
                                 <tr class="table-info">
                                     <th>No</th>
-                                    <!-- <th>ID Pengaduan</th> -->
                                     <th>Tanggal Pengaduan</th>
                                     <th>Tanggapan</th>
                                     <th>nik</th>
@@ -52,7 +53,6 @@
                                 @foreach ($tanggapan as $i => $p)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
-                                    <!-- <td>{{ $p->id_pengaduan }}</td> -->
                                     <td>{{ $p->tgl_tanggapan }}</td>
                                     <td>{{ $p->tanggapan }}</td>
                                     <td>{{ $p->nik }}</td>

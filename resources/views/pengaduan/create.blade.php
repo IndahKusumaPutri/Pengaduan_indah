@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-    <title>Pengkat</title>
+    <title>Pengaduan</title>
 </head>
 
 <body>
@@ -20,72 +20,81 @@
             <div class="card-body">
                 <a href="/pengaduan" class="btn btn-primary">Kembali</a>
 
-                <!-- <form class="form-horizontal" action="/pengaduan/store" method="post"> {{ csrf_field() }} -->
+                <form class="form-horizontal" action="/pengaduan/store" method="post"> {{ csrf_field() }}
 
-                <form method="post" action="/pengaduan/store" enctype="multipart/form-data"> {{ csrf_field() }}
+                    <!-- <form method="post" action="/pengaduan/store" enctype="multipart/form-data"> {{ csrf_field() }} -->
 
                     <div class="form-group row">
-                        <label>Tanggal Pengaduan</label>
-                        <input type="date" class="form-control" name="tgl_pengaduan">
+                        <label class="control-label col-sm-2">Tanggal Pengaduan</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" name="tgl_pengaduan">
 
-                        @if ($errors->has('tgl_pengaduan'))
-                        <div class="date-danger">
-                            {{ $errors->first('tgl_pengaduan') }}
+                            @if ($errors->has('tgl_pengaduan'))
+                            <div class="date-danger">
+                                {{ $errors->first('tgl_pengaduan') }}
+                            </div>
+                            @endif
+
                         </div>
-                        @endif
-
                     </div>
 
                     <div class="form-group row">
-                        <label>NIK</label>
-                        <input type="number" class="form-control" name="nik">
+                        <label class="control-label col-sm-2">NIK</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="nik">
 
-                        @if ($errors->has('nik'))
-                        <div class="number-danger">
-                            {{ $errors->first('nik') }}
+                            @if ($errors->has('nik'))
+                            <div class="number-danger">
+                                {{ $errors->first('nik') }}
+                            </div>
+                            @endif
+
                         </div>
-                        @endif
-
                     </div>
 
                     <div class="form-group row">
-                        <label>Isi Laporan</label>
-                        <input type="text" class="form-control" name="isi_laporan">
+                        <label class="control-label col-sm-2">Isi Laporan</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="isi_laporan">
 
-                        @if ($errors->has('isi_laporan'))
-                        <div class="text-danger">
-                            {{ $errors->first('isi_laporan') }}
+                            @if ($errors->has('isi_laporan'))
+                            <div class="text-danger">
+                                {{ $errors->first('isi_laporan') }}
+                            </div>
+                            @endif
+
                         </div>
-                        @endif
-
                     </div>
 
                     <div class="form-group row">
-                        <label>Foto</label>
-                        <input type="file" class="form-control" name="foto">
+                        <label class="control-label col-sm-2">Foto</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" name="foto">
 
-                        @if ($errors->has('foto'))
-                        <div class="text-danger">
-                            {{ $errors->first('foto') }}
+                            @if ($errors->has('foto'))
+                            <div class="text-danger">
+                                {{ $errors->first('foto') }}
+                            </div>
+                            @endif
+
                         </div>
-                        @endif
-
                     </div>
 
                     <div class="form-group row">
-                        <label>Status</label>
-                        <!-- <input type="radio" class="form-control" name="status"> -->
-                        <label for="status">
-                            <input type="radio" name="status" value="proses" id="status" checked>&nbsp Proses &nbsp &nbsp &nbsp
-                            <input type="radio" name="status" value="selesai" id="status">&nbsp Selesai
-                        </label>
+                        <label class="control-label col-sm-2">Status</label>
+                        <div class="col-sm-10">
+                            <label for="status">
+                                <input type="radio" name="status" value="proses" id="status" checked>&nbsp Proses &nbsp &nbsp &nbsp
+                                <input type="radio" name="status" value="selesai" id="status">&nbsp Selesai
+                            </label>
 
-                        @if ($errors->has('status'))
-                        <div class="radio-danger">
-                            {{ $errors->first('status') }}
+                            @if ($errors->has('status'))
+                            <div class="radio-danger">
+                                {{ $errors->first('status') }}
+                            </div>
+                            @endif
+
                         </div>
-                        @endif
-
                     </div>
 
                     <div class="form-group row">
@@ -97,15 +106,7 @@
                 </form>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

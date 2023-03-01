@@ -44,13 +44,15 @@ class PengaduanController extends Controller
             'status'        => 'required'
         ]);
 
-        Pengaduan::create($request, [
-            'tgl_pengaduan' => $request->tgl_pengaduan,
-            'nik'           => $request->nik,
-            'isi_laporan'   => $request->isi_laporan,
-            'foto'          => $request->foto,
-            'status'        => $request->status
-        ]);
+        // Pengaduan::create($request, [
+        //     'tgl_pengaduan' => $request->tgl_pengaduan,
+        //     'nik'           => $request->nik,
+        //     'isi_laporan'   => $request->isi_laporan,
+        //     'foto'          => $request->foto,
+        //     'status'        => $request->status
+        // ]);
+
+        Pengaduan::create($request->all());
 
         return redirect()->route('pengaduan.index')->with('Data ditambah', 'Data berhasil ditambah');
     }

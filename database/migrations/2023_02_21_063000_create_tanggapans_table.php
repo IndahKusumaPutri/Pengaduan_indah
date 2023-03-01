@@ -14,7 +14,7 @@ class CreateTanggapansTable extends Migration
     public function up()
     {
         Schema::create('tanggapans', function (Blueprint $table) {
-            $table->bigInteger('id_tanggapan', 11);
+            $table->integer('id_tanggapan', 11);
             // $table->integer('id_pengaduan');
             $table->date('tgl_tanggapan');
             $table->text('tanggapan');

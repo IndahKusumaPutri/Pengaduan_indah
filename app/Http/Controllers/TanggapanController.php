@@ -37,20 +37,18 @@ class TanggapanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            // 'id_pengaduan'  => 'required',
             'tgl_tanggapan' => 'required',
             'tanggapan'     => 'required',
             'nik'           => 'required'
         ]);
 
-        Tanggapan::create($request, [
-            // 'id_pengaduan'  =>$request->id_pengaduan,
-            'tgl_tanggapan' => $request->tgl_tanggapan,
-            'tanggapan'     => $request->tanggapan,
-            'nik'           => $request->nik
-        ]);
+        // Tanggapan::create($request, [
+        //     'tgl_tanggapan' => $request->tgl_tanggapan,
+        //     'tanggapan'     => $request->tanggapan,
+        //     'nik'           => $request->nik
+        // ]);
 
-        // Tanggapan::create($request->all());    
+        Tanggapan::create($request->all());    
 
         return redirect()->route('tanggapan.index');
     }
@@ -103,6 +101,8 @@ class TanggapanController extends Controller
             'tanggapan'     => $request->tanggapan,
             'nik'           => $request->nik
         ]);
+
+        // Tanggapan::where('id_tanggapan', $id)->update($request->all());
 
         return redirect()->route('pengaduan.index')->with('Data diedit','Data berhasil diedit');
     }

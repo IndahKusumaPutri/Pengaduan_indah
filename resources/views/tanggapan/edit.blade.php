@@ -16,13 +16,12 @@
       <div class="card-body">
         <a href="/tanggapan" class="btn btn-primary">Kembali</a>
 
-        <form method="post" action="/tanggapan/update/{{ $tanggapan->id_tanggapan }}">
+        <!-- <form method="post" action="/tanggapan/update/{{ $tanggapan->id_tanggapan }}">
           {{ csrf_field() }}
-          {{ method_field('PUT') }}
+          {{ method_field('PUT') }} -->
 
-          <!-- /.card-header -->
-          <!-- <form class="form-horizontal" action="/tanggapan/edit/{{ $tanggapan->id_tanggapan }}" method="post"> {{ csrf_field() }}
-            <input type="hidden" name="_method" value="POST"> --> -->
+          <form class="form-horizontal" action="/tanggapan/edit/{{ $tanggapan->id_tanggapan }}" method="post"> {{ csrf_field() }}
+            <input type="hidden" name="_method" value="POST"> 
 
           <div class="form-group row">
             <label class="control-label col-sm-2">Tanggal Tanggapan</label>

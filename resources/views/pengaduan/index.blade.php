@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-    <title>Pengkat</title>
+    <title>Pengaduan</title>
 </head>
 
 <body>
@@ -33,10 +33,12 @@
             <div class="container">
                 <div class="card mt-5">
                     <div class="card-header text-center">
-                        Tanggapan
+                        Pengaduan
                     </div>
                     <div class="card-body">
-                        <a href="/tanggapan/create" class="btn btn-primary">Laporkan Masalah Anda</a>
+                        <a href="/pengaduan/create" class="btn btn-primary">Laporkan Masalah Anda</a>
+                        <br />
+                        <br />
                         <table class="table table-bordered table-hover table-striped">
                             <thead>
                                 <tr class="table-info">
