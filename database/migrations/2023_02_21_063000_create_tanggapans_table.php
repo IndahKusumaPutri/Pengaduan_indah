@@ -15,7 +15,7 @@ class CreateTanggapansTable extends Migration
     {
         Schema::create('tanggapans', function (Blueprint $table) {
             $table->integer('id_tanggapan', 11);
-            // $table->integer('id_pengaduan');
+            $table->integer('id_pengaduan');
             $table->date('tgl_tanggapan');
             $table->text('tanggapan');
             $table->char('nik', 17);

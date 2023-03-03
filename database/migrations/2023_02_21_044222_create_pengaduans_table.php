@@ -14,7 +14,7 @@ class CreatePengaduansTable extends Migration
     public function up()
     {
         Schema::create('pengaduans', function (Blueprint $table) {
-            $table->biginteger('id_pengaduan', 11);
+            $table->integer('id_pengaduan', 11);
             $table->date('tgl_pengaduan');
             $table->char('nik', 17);
             $table->text('isi_laporan');
