@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Pengaduan;
+use App\PengaduanImage;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class PengaduanController extends Controller
 {
@@ -16,6 +18,25 @@ class PengaduanController extends Controller
     {
         $pengaduan = Pengaduan::all();
         return view('pengaduan.index', compact('pengaduan'));
+    }
+
+    public function status($id)
+    {
+        $pengaduan = Pengaduan::where('id_pengaduan', $id)->first();
+
+        $status_sekarang = $pengaduan->status;
+
+        if ($status_sekarang == 1) {
+            Pengaduan::where('id_pengaduan', $id)->update([
+                'status' => 0
+            ]);
+        } else {
+            Pengaduan::where('id_pengaduan', $id)->update([
+                'status' => 1
+            ]);
+        }
+
+        return redirect()->route('pengaduan')->with('Data diubah', 'Data berhasil diubah!');
     }
 
     /**
@@ -40,9 +61,31 @@ class PengaduanController extends Controller
             'tgl_pengaduan' => 'required',
             'nik'           => 'required',
             'isi_laporan'   => 'required',
-            'foto'          => 'required',
+            'foto.*'        => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png,|max:2000|required',
             'status'        => 'required'
         ]);
+
+        $uniqID = Carbon::now()->timestamp . uniqid();
+
+        // $item = time().rand(100,999).".".$nm->getClientOriginalName();
+
+        $data = new Pengaduan;
+        $data->unique_id = $uniqID;
+        $data->tgl_pengaduan = $request->tgl_pengaduan;
+        $data->nik = $request->nik;
+        $data->isi_laporan = $request->isi_laporan;
+
+        foreach ($request->foto as $key => $image) {
+            $pimage = new PengaduanImage();
+            $pimage->Pengaduan_unique_id = $uniqID;
+
+            $imageName = Carbon::now()->timestamp . $key . '.' . $request->foto[$key]->extension();
+            $request->foto[$key]->move(public_path("images"), $imageName);
+
+            $pimage->image = $imageName;
+            $pimage->save();
+        }
+        $data->save();
 
         // Pengaduan::create($request, [
         //     'tgl_pengaduan' => $request->tgl_pengaduan,

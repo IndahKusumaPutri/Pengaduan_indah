@@ -26,6 +26,7 @@ Route::post('pengaduan/store', 'PengaduanController@store');
 Route::get('pengaduan/edit/{id}', 'PengaduanController@edit')->name('pengaduan.edit');
 Route::get('pengaduan/update/{id}', 'PengaduanController@update')->name('pengaduan.update');
 Route::delete('pengaduan/delete/{id}', 'PengaduanController@destroy')->name('pengaduan.destroy');
+// Route::get('pengaduan/status/{id}', 'PengaduanController@status')->name('pengaduan.status');
 
 
 //tanggapan

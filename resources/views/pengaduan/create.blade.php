@@ -1,5 +1,7 @@
 <!-- Content Header (Page header) -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+@extends('layouts.app')
+
+@section('content')
 
 <!doctype html>
 <html>
@@ -15,72 +17,70 @@
     <div class="container">
         <div class="card mt-5">
             <div class="card-header text-center">
-                Masukkan Pengaduan
+                TAMBAH DATA
             </div>
             <div class="card-body">
                 <!-- <a href="/pengaduan" class="btn btn-primary">Kembali</a> -->
+                <br />
+                <br />
 
-                <form class="form-horizontal" action="/pengaduan/store" method="post"> {{ csrf_field() }}
+                <form method="post" action="/pengaduan/store" enctype="multipart/form-data">
+
+                    {{ csrf_field() }}
+
+                    <!-- <form class="form-horizontal" action="/pengaduan/store" method="post"> {{ csrf_field() }} -->
 
                     <!-- <form method="post" action="/pengaduan/store" enctype="multipart/form-data"> {{ csrf_field() }} -->
 
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2">Tanggal Pengaduan</label>
-                        <div class="col-sm-10">
-                            <input type="date" class="form-control" name="tgl_pengaduan">
+                    <div class="form-group">
+                        <label>Tanggal Pengaduan</label>
+                        <input type="date" class="form-control" name="tgl_pengaduan">
 
-                            @if ($errors->has('tgl_pengaduan'))
-                            <div class="date-danger">
-                                {{ $errors->first('tgl_pengaduan') }}
-                            </div>
-                            @endif
-
+                        @if ($errors->has('tgl_pengaduan'))
+                        <div class="date-danger">
+                            {{ $errors->first('tgl_pengaduan') }}
                         </div>
+                        @endif
+
                     </div>
 
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2">NIK</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" name="nik">
+                    <div class="form-group">
+                        <label>NIK</label>
+                        <input type="number" class="form-control" name="nik" placeholder="Masukan NIK">
 
-                            @if ($errors->has('nik'))
-                            <div class="number-danger">
-                                {{ $errors->first('nik') }}
-                            </div>
-                            @endif
-
+                        @if ($errors->has('nik'))
+                        <div class="number-danger">
+                            {{ $errors->first('nik') }}
                         </div>
+                        @endif
+
                     </div>
 
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2">Isi Laporan</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="isi_laporan">
+                    <div class="form-group">
+                        <label>Isi Laporan</label>
+                        <textarea name="isi_laporan" class="form-control" placeholder="Isi Laporan"></textarea>
 
-                            @if ($errors->has('isi_laporan'))
-                            <div class="text-danger">
-                                {{ $errors->first('isi_laporan') }}
-                            </div>
-                            @endif
-
+                        @if($errors->has('isi_laporan'))
+                        <div class="text-danger">
+                            {{ $errors->first('isi_laporan')}}
                         </div>
+                        @endif
+
                     </div>
 
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2">Foto</label>
-                        <div class="col-sm-10">
-                            <input type="file" class="form-control" name="foto">
+                    <div class="form-group">
+                        <label>Foto</label>
+                        <input type="file" class="form-control" id="inputGroupFile" name="foto" placeholder="foto">
 
-                            @if ($errors->has('foto'))
-                            <div class="text-danger">
-                                {{ $errors->first('foto') }}
-                            </div>
-                            @endif
-
+                        @if ($errors->has('foto'))
+                        <div class="text-danger">
+                            {{ $errors->first('foto') }}
                         </div>
+                        @endif
+
                     </div>
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="control-label col-sm-2">Status</label>
                         <div class="col-sm-10">
                             <label for="status">
@@ -95,18 +95,32 @@
                             @endif
 
                         </div>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label>Status</label>
+                        <br>
+                        <input type="text" name="status" value="Proses" class="form-control" placeholder="Status">
+                        </br>
+
+                        @if($errors->has('status'))
+                        <div class="text-danger">
+                            {{ $errors->first('status')}}
+                        </div>
+                        @endif
+
                     </div>
 
-                    <div class="form-group row">
-                        <div class="col-sm-offset-5 col-sm-6">
-                            <a href="{{route('pengaduan.index')}}" class="btn btn-outline-danger">Kembali</a>
-                            <button type="submit" class="btn btn-outline-primary" onclick="return confirm('Yakin anda ingin menyimpan data tersebut?')">Simpan</i></button>
-                        </div>
+                    <div class="form-group">
+                        <a href="{{ route('pengaduan.index')}}" class="btn btn-outline-danger">Kembali</a>
+                        <button type="submit" class="btn btn-outline-primary" onclick="return confirm('Yakin anda ingin menyimpan data tersebut?')">Simpan</i></button>
                     </div>
                 </form>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+@endsection
