@@ -1,6 +1,6 @@
-<!-- Content Header (Page header) -->
 @extends('layouts.app')
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+@section('content')
+
 <!doctype html>
 <html>
 
@@ -42,6 +42,7 @@
                         <br />
                         <table class="table table-bordered table-hover table-striped">
                             <thead>
+
                                 <tr class="table-info">
                                     <th>No</th>
                                     <th>Tanggal Pengaduan</th>
@@ -49,27 +50,45 @@
                                     <th>Isi Laporan</th>
                                     <th>Foto</th>
                                     <th>Status</th>
+                                    <th>Keterangan</th>
                                     <th>Opsi</th>
                                 </tr>
+
                             </thead>
                             <tbody>
                                 @foreach ($pengaduan as $i => $p)
+
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
                                     <td>{{ $p->tgl_pengaduan }}</td>
                                     <td>{{ $p->nik }}</td>
                                     <td>{{ $p->isi_laporan }}</td>
-                                    <td>{{ $p->foto }}</td>
-                                    <td>{{ $p->status }}</td>
+                                    <!-- <td>{{ $p->foto }}</td> -->
                                     <td>
+                                        <img src="{{ asset('storage/'. $p->foto) }}" height="15%" width="30%">
+                                    </td>
+                                    <td>
+                                        <label class="label label-success">{{ ($p->status == 1) ? 'Masa Proses' : 'Proses' }}</label>
+                                    </td>
+                                    <td>
+                                        @if($p->status == 0)
+                                        <a href="/pengaduan/status/{{ $p->id_pengaduan }}" class="btn btn-sm btn-primary" onClick="return confirm('Yakin ingin memproses data ini?')">Proses</a>
+                                        @else
+                                        <a href="#" class="btn btn-sm btn-success" disabled>Masa Proses</a>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <a href="/pengaduan/edit/{{ $p->id_pengaduan }}" class="btn btn-warning">Edit</a>
+                                        <a href="/pengaduan/destroy/{{ $p->id_pengaduan }}" class="btn btn-danger fa-fa-trash">Hapus</a>
+                                    </td>
+                                    <!-- <td>
                                         <form method="post" action="{{ route('pengaduan.destroy', $p->id_pengaduan) }}"> {{ csrf_field() }}
                                             <a href="{{ route('pengaduan.edit', $p->id_pengaduan) }}" class="btn btn-outline-success">Edit</a>
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button class="btn btn-outline-danger" type="submit" onclick="return confirm('Yakin anda ingin menghapus data tersebut?')">Hapus</button>
                                         </form>
-                                    </td>
+                                    </td> -->
                                 </tr>
-                                <a href="{{route('tanggapan.index')}}">tanggapan</a>
                                 @endforeach
                             </tbody>
                         </table>
@@ -81,4 +100,4 @@
 </body>
 
 </html>
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+@endsection
