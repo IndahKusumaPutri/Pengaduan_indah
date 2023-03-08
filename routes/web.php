@@ -17,15 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/landingpage', 'HomeController@index');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+//login dan regis
+Route::get('/register', 'AuthController@getregister')->name('register');
+Route::post('/register', 'AuthController@postregister');
+Route::get('/login', 'AuthController@getlogin')->name('login');
+Route::post('/login', 'AuthController@postlogin');
+Route::get('/logout', 'AuthController@logout')->name('logout');
 
 //pengaduan
-Route::get('pengaduan', 'PengaduanController@index')->name('pengaduan.index');
-Route::get('pengaduan/create', 'PengaduanController@create');
-Route::post('pengaduan/store', 'PengaduanController@store');
-Route::get('pengaduan/edit/{id}', 'PengaduanController@edit')->name('pengaduan.edit');
-Route::get('pengaduan/update/{id}', 'PengaduanController@update')->name('pengaduan.update');
-Route::delete('pengaduan/delete/{id}', 'PengaduanController@destroy')->name('pengaduan.destroy');
+Route::get('/pengaduan', 'PengaduanController@index')->name('pengaduan.index');
+Route::get('/pengaduan/create', 'PengaduanController@create');
+Route::post('/pengaduan/store', 'PengaduanController@store');
+Route::get('/pengaduan/edit/{id}', 'PengaduanController@edit')->name('pengaduan.edit');
+Route::get('/pengaduan/update/{id}', 'PengaduanController@update')->name('pengaduan.update');
+Route::delete('/pengaduan/delete/{id}', 'PengaduanController@destroy')->name('pengaduan.destroy');
 // Route::get('pengaduan/status/{id}', 'PengaduanController@status')->name('pengaduan.status');
 
 

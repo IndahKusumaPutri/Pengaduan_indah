@@ -22,7 +22,7 @@ class CreateProvincesTables extends Migration
     {
         Schema::create('indoregion_provinces', function(Blueprint $table){
             $table->char('id', 2)->index();
-            $table->string('name', 191);
+            $table->string('name');
         });
     }
 

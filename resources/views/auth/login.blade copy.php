@@ -30,10 +30,10 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="#" class="h1"><b>E-POSYANDU</b></a>
+                <a href="#" class="h1"><b>PENGADUAN MASYARAKAT</b></a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Masuk untuk Memulai E-Posyandu</p>
+                <p class="login-box-msg">Masuk untuk Memulai Pengaduan</p>
 
                 <form action="{{ Route('login') }}" method="post">
                     {{ csrf_field() }}
@@ -45,11 +45,13 @@
                             </div>
                         </div>
                     </div>
+
                     @if ($errors->has('email'))
                         <div class="text-danger">
                             {{ $errors->first('email') }}
                         </div>
                     @endif
+
                     <div class="input-group mb-3">
                         <input type="password" class="form-control" name="password" placeholder="Password">
                         <div class="input-group-append">
@@ -58,13 +60,14 @@
                             </div>
                         </div>
                     </div>
+
                     @if ($errors->has('password'))
                         <div class="text-danger">
                             {{ $errors->first('password') }}
                         </div>
                     @endif
-                    <div class="row">
 
+                    <div class="row">
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block">Masuk</button>
                         </div>

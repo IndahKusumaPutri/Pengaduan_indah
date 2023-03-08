@@ -98,7 +98,7 @@ https://templatemo.com/tm-582-tale-seo-agency
                 </ul>
               </li> -->
               <!-- <li class="scroll-to-section"><a href="#infos">Infos</a></li>     -->
-              <li class="scroll-to-section"><a href="#">Login</a></li>
+              <li class="scroll-to-section"><a href="{{route('login')}}">Login</a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
