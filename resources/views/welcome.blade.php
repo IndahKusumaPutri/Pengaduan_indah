@@ -3,609 +3,408 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Pengaduan Masyarkat</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <title>Pengaduan Masyarakat</title>
 
-    <!-- Libraries Stylesheet -->
-    <link href="../../template/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../../template/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../../template/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../../template/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="../../template/css/style.css" rel="stylesheet">
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/templatemo-tale-seo-agency.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!--
+
+TemplateMo 582 Tale SEO Agency
+
+https://templatemo.com/tm-582-tale-seo-agency
+
+-->
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Pre-Header Area Start ***** -->
+  <div class="pre-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-9">
+          <div class="left-info">
+            <ul>
+              <li><a href="#"><i class="fa fa-phone"></i>+62 812 3456 7890</a></li>
+              <li><a href="#"><i class="fa fa-envelope"></i>laporkan.pengaduan@email.com</a></li>
+              <!-- <li><a href="#"><i class="fa fa-map-marker"></i>St. London 54th Bull</a></li> -->
+            </ul>
+          </div>
         </div>
-        <!-- Spinner End -->
-
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
-                    <h1 class="m-0">Pengaduan</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav mx-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="project.html" class="nav-item nav-link">Project</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
-                </div>
-            </nav>
-
-            <div class="container-xxl bg-primary hero-header">
-                <div class="container px-lg-5">
-                    <div class="row g-5 align-items-end">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated slideInDown">Aplikasi Pengaduan Masyarakat</h1>
-                            <p class="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
-                            <a href="" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
-                            <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="../../template/img/hero.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-lg-4 col-sm-3">
+          <div class="social-icons">
+            <ul>
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+            </ul>
+          </div>
         </div>
-        <!-- Navbar & Hero End -->
+      </div>
+    </div>
+  </div>
+  <!-- ***** Pre-Header Area End ***** -->
 
-
-        <!-- Feature Start
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-4">
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                            <h5 class="mb-3">Digital Marketing</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                            <h5 class="mb-3">SEO & Backlinks</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                            <h5 class="mb-3">Design & Development</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <!-- <img src="assets/images/logo.png" alt="" style="max-width: 112px;"> -->
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#services">About Us</a></li>
+              <li class="scroll-to-section"><a href="#projects">Contact</a></li>
+              <!-- <li class="has-sub">
+                <a href="javascript:void(0)">Pages</a>
+                <ul class="sub-menu">
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+              </li> -->
+              <!-- <li class="scroll-to-section"><a href="#infos">Infos</a></li>     -->
+              <li class="scroll-to-section"><a href="#">Login</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
         </div>
-        Feature End -->
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
 
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="caption header-text">
+            <h6>PENGADUAN MASYARAKAT</h6>
+            <div class="line-dec"></div>
+            <h4>LAYANAN <em>PENGADUAN</em><span>MASYARAKAT</span></h4>
+            <p>Sampaikan laporan masalah Anda di sini, kami akan memprosesnya dengan cepat.</p>
+                <!-- <a href="index.html">Home</a>, <a href="about.html">About</a>, and <a href="faqs.html">FAQ</a>.</p> -->
+            <div class="main-button scroll-to-section"><a href="#services">Laporkan!</a></div>
+            <span>or</span>
+            <div class="second-button"><a href="faqs.html">Tata Cara</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <!-- <p class="section-title text-secondary">About Us<span></span></p>
-                        <h1 class="mb-5">#1 Digital solution with 10 years of experience</h1> -->
-                        <!-- <p class="mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo eirmod magna dolore erat amet</p> -->
-                        <div class="skill mb-4">
-                            <!-- <div class="d-flex justify-content-between">
-                                <p class="mb-2">Digital Marketing</p>
-                                <p class="mb-2">85%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">SEO & Backlinks</p>
-                                <p class="mb-2">90%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Design & Development</p>
-                                <p class="mb-2">95%</p>
-                            </div> -->
-                            <!-- <div class="progress"> -->
-                                <!-- <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div> -->
-                            </div>
-                        </div>
-                        <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a> -->
+  <div class="services section" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-heading">
+                <h2>We Provide <em>Different Services</em> &amp;
+                  <span>Features</span> For Your Agency
+                </h2>
+                <div class="line-dec"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doers eiusmod.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/services-01.jpg" alt="discover SEO" class="templatemo-feature">
+                </div>
+                <h4>Discover More on Latest SEO Trends</h4>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/services-02.jpg" alt="data analysis" class="templatemo-feature">
+                </div>
+                <h4>Real-Time Big Data Analysis</h4>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/services-03.jpg" alt="precise data" class="templatemo-feature">
+                </div>
+                <h4>Precise Data Analysis &amp; Prediction</h4>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/services-04.jpg" alt="SEO marketing" class="templatemo-feature">
+                </div>
+                <h4>SEO Marketing &amp; Social Media</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects section" id="projects">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h2>Discover Our <em>Work</em> &amp; <span>Projects</span></h2>
+            <div class="line-dec"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doers eiusmod.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-features owl-carousel">
+            <div class="item">
+              <img src="assets/images/projects-01.jpg" alt="">
+              <div class="down-content">
+                <h4>Digital Agency HTML Templates</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-02.jpg" alt="">
+              <div class="down-content">
+                <h4>Admin Dashboard CSS Templates</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-03.jpg" alt="">
+              <div class="down-content">
+                <h4>Best Responsive Website Layouts</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-04.jpg" alt="">
+              <div class="down-content">
+                <h4>HTML CSS Layouts for your websites</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-02.jpg" alt="">
+              <div class="down-content">
+                <h4>Bootstrap 5 Themes for Free</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-03.jpg" alt="">
+              <div class="down-content">
+                <h4>Mobile Friendly Website Layouts</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="infos section" id="infos">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-content">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="left-image">
+                  <img src="assets/images/left-infos.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="section-heading">
+                  <h2>More <em>About Us</em> &amp; What <span>We Offer</span></h2>
+                  <div class="line-dec"></div>
+                  <p>You are free to use this template for any purpose. You are not allowed to redistribute the
+                    downloadable ZIP file of Tale SEO Template on any other template website. Please contact us. Thank
+                    you.</p>
+                </div>
+                <div class="skills">
+                  <div class="skill-slide marketing">
+                    <div class="fill"></div>
+                    <h6>Marketing</h6>
+                    <span>90%</span>
+                  </div>
+                  <div class="skill-slide digital">
+                    <div class="fill"></div>
+                    <h6>Ditigal Media</h6>
+                    <span>80%</span>
+                  </div>
+                  <div class="skill-slide media">
+                    <div class="fill"></div>
+                    <h6>Social Media Managing</h6>
+                    <span>95%</span>
+                  </div>
+                </div>
+                <p class="more-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doers eiusmod tempor
+                  incididunt ut labore et dolore dolor dolor sit amet, consectetur adipiscing elit, sed doers eiusmod.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-us section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact-us-content">
+            <div class="row">
+              <div class="col-lg-4">
+                <div id="map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth"
+                    width="100%" height="670px" frameborder="0" style="border:0; border-radius: 23px;"
+                    allowfullscreen=""></iframe>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <form id="contact-form" action="" method="post">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="section-heading">
+                        <h2><em>Contact Us</em> &amp; Get In <span>Touch</span></h2>
+                      </div>
                     </div>
                     <div class="col-lg-6">
-                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="../../template/img/about.png">
+                      <fieldset>
+                        <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                      </fieldset>
                     </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="surname" name="surname" id="surname" placeholder="Your Surname..."
+                          autocomplete="on" required>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..."
+                          required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="subject" name="subject" id="subject" placeholder="Subject..." autocomplete="on">
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+                <div class="more-info">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="info-item">
+                        <i class="fa fa-phone"></i>
+                        <h4><a href="#">010-020-0340</a></h4>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="info-item">
+                        <i class="fa fa-envelope"></i>
+                        <h4><a href="#">info@company.com</a></h4>
+                        <h4><a href="#">hello@company.com</a></h4>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="info-item">
+                        <i class="fa fa-map-marker"></i>
+                        <h4><a href="#">Sunny Isles Beach, FL 33160, United States</a></h4>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- About End -->
-
-
-        <!-- Facts Start -->
-        <!-- <div class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                        <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                        <p class="text-white mb-0">Years Experience</p>
-                    </div>
-                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                        <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                        <p class="text-white mb-0">Team Members</p>
-                    </div>
-                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                        <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                        <p class="text-white mb-0">Satisfied Clients</p>
-                    </div>
-                    <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                        <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
-                        <p class="text-white mb-0">Compleate Projects</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Facts End -->
-
-
-        <!-- Service Start -->
-        <!-- <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Our Services<span></span></p>
-                    <h1 class="text-center mb-5">What Solutions We Provide</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-search fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">SEO Optimization</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-laptop-code fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Web Design</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fab fa-facebook-f fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Social Media Marketing</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-mail-bulk fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Email Marketing</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-thumbs-up fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">PPC Advertising</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fab fa-android fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">App Development</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Service End -->
-
-
-        <!-- Newsletter Start -->
-        <!-- <div class="container-xxl bg-primary newsletter py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7 text-center">
-                        <p class="section-title text-white justify-content-center"><span></span>Newsletter<span></span></p>
-                        <h1 class="text-center text-white mb-4">Stay Always In Touch</h1>
-                        <p class="text-white mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo</p>
-                        <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Newsletter End -->
-
-
-        <!-- Projects Start -->
-        <!-- <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span></p>
-                    <h1 class="text-center mb-5">Recently Completed Projects</h1>
-                </div>
-                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="col-12 text-center">
-                        <ul class="list-inline mb-5" id="portfolio-flters">
-                            <li class="mx-2 active" data-filter="*">All</li>
-                            <li class="mx-2" data-filter=".first">Web Design</li>
-                            <li class="mx-2" data-filter=".second">Graphic Design</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row g-4 portfolio-container">
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="../../template/img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="../../template/img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="../../template/img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="../../template/img/portfolio-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="../../template/img/portfolio-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="../../template/img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Projects End -->
-
-
-        <!-- Testimonial Start -->
-        <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
-                <h1 class="text-center mb-5">What Say Our Clients!</h1>
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="../../template/img/testimonial-1.jpg" style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="../../template/img/testimonial-2.jpg" style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="../../template/img/testimonial-3.jpg" style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Testimonial End -->
-
-
-        <!-- Team Start -->
-        <!-- <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Our Team<span></span></p>
-                    <h1 class="text-center mb-5">Our Team Members</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/team-1.jpg" alt="">
-                                <h5>John Doe</h5>
-                                <span>CEO & Founder</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="../../template/img/team-2.jpg" alt="">
-                                <h5>Jessica Brown</h5>
-                                <span>Web Designer</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/team-3.jpg" alt="">
-                                <h5>Tony Johnson</h5>
-                                <span>SEO Expert</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Team End -->
-        
-
-        <!-- Footer Start -->
-        <!-- <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Career</a>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
-                        <div class="row g-2">
-                            <div class="col-4">
-                                <img class="img-fluid" src="../../template/img/portfolio-1.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="../../template/img/portfolio-2.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="../../template/img/portfolio-3.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="../../template/img/portfolio-4.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="../../template/img/portfolio-5.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="../../template/img/portfolio-6.jpg" alt="Image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
-                        <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu</p>
-                        <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container px-lg-5">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.  -->
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							<!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                            Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+      </div>
     </div>
+  </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../template/lib/wow/wow.min.js"></script>
-    <script src="../../template/lib/easing/easing.min.js"></script>
-    <script src="../../template/lib/waypoints/waypoints.min.js"></script>
-    <script src="../../template/lib/counterup/counterup.min.js"></script>
-    <script src="../../template/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../../template/lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="../../template/lib/lightbox/js/lightbox.min.js"></script>
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2036 <a href="#">Tale SEO Agency</a>. All rights reserved.
 
-    <!-- Template Javascript -->
-    <script src="../../template/js/main.js"></script>
+          <br>Design: <a href="https://templatemo.com" target="_blank">TemplateMo</a> Distribution: <a
+            href="https://themewagon.com">ThemeWagon</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+  <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+  <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+  <script src="{{ asset('assets/js/tabs.js') }}"></script>
+  <script src="{{ asset('assets/js/popup.js') }}"></script>
+  <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+
 </body>
 
 </html>
