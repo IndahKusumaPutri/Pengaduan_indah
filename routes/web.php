@@ -20,11 +20,11 @@ Route::get('/', function () {
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 //login dan regis
-Route::get('/register', 'AuthController@getregister')->name('register');
-Route::post('/register', 'AuthController@postregister');
-Route::get('/login', 'AuthController@getlogin')->name('login');
-Route::post('/login', 'AuthController@postlogin');
-Route::get('/logout', 'AuthController@logout')->name('logout');
+Route::get('/register', 'AuthController@getregister')->name('register')->middleware('guest');
+Route::post('/register', 'AuthController@postregister')->middleware('guest');
+Route::get('/login', 'AuthController@getlogin')->name('login')->middleware('guest');
+Route::post('/login', 'AuthController@postlogin')->middleware('guest');
+Route::get('/logout', 'AuthController@logout')->middleware('auth')->name('logout');
 
 //pengaduan
 Route::get('/pengaduan', 'PengaduanController@index')->name('pengaduan.index');

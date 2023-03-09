@@ -34,42 +34,48 @@
 
                             <form class="pt-3" action="{{ Route('login') }}" method="post">
                                 {{ csrf_field() }}
+
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-lg" name="email"
-                                        placeholder="Email">
-                                    {{-- <div class="input-group-append">
+                                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
+                                    <!-- <div class="input-group-append">
                                         <div class="input-group-text">
                                             <span class="fas fa-envelope"></span>
                                         </div>
-                                    </div> --}}
+                                    </div> -->
                                 </div>
 
                                 @if ($errors->has('email'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('email') }}
-                                    </div>
+                                <div class="text-danger">
+                                    {{ $errors->first('email') }}
+                                </div>
                                 @endif
 
                                 <div class="input-group mb-3">
                                     <input type="password" class="form-control  form-control-lg" name="password" placeholder="Password">
-                                    {{-- <div class="input-group-append">
+                                    <!-- <div class="input-group-append">
                                         <div class="input-group-text">
                                             <span class="fas fa-lock"></span>
                                         </div>
-                                    </div> --}}
+                                    </div> -->
                                 </div>
 
                                 @if ($errors->has('password'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('password') }}
-                                    </div>
+                                <div class="text-danger">
+                                    {{ $errors->first('password') }}
+                                </div>
                                 @endif
 
-                                <div class="mt-3">
-                                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                                        href="../../index.html">MASUK</a>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-block btn btn-primary btn-lg font-weight-medium auth-form-btn">Masuk</button>
+                                    </div>
                                 </div>
-                                
+
+                                <!-- <div class="mt-3">
+                                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
+                                        >MASUK</a>
+                                </div> -->
+
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     <div class="form-check">
                                         <label class="form-check-label text-muted">
@@ -80,12 +86,12 @@
                                     <a href="#" class="auth-link text-black">Forgot password?</a>
                                 </div>
 
-                                <div class="mb-2">
+                                <!-- <div class="mb-2">
                                     <button type="button" class="btn btn-block btn-google auth-form-btn">
                                         <i class="ti-google mr-2"></i>Connect using Google
                                     </button>
-                                </div>
-                                
+                                </div> -->
+
                                 <div class="text-center mt-4 font-weight-light">
                                     Belum Memiliki Akun? <a href="{{ route('register') }}" class="text-primary">Daftar</a>
                                 </div>

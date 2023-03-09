@@ -43,7 +43,7 @@
                         <div class="container">
                             <div class="card mt-5">
                                 <div class="card-body">
-                                    <a href="/pengaduan/create" class="btn btn-primary">Laporkan Masalah Anda</a>
+                                    <a href="/pengaduan/create" class="btn btn-primary">Laporkan!</a>
                                     <br />
                                     <br />
                                     <table class="table table-bordered table-hover table-striped">

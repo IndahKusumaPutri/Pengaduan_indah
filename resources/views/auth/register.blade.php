@@ -38,12 +38,12 @@
                                 <div class="form-group">
                                     <input type="text"
                                         class="form-control form-control-lg {{ $errors->has('nik') ? 'is-invalid' : '' }}"
-                                        name="nik" placeholder="Full name" value="{{ old('nik') }}" required
+                                        name="nik" placeholder="NIK" value="{{ old('nik') }}" required
                                         autofocus>
 
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('nik'))
                                         <div class="invalid-feedback">
-                                            {{ $errors->first('name') }}
+                                            {{ $errors->first('nik') }}
                                         </div>
                                     @endif
 
@@ -54,11 +54,11 @@
                                         class="form-control form-control-lg {{ $errors->has('name') ? 'is-invalid' : '' }}"
                                         name="name" placeholder="Full name" value="{{ old('name') }}" required
                                         autofocus>
-                                    {{-- <div class="input-group-append">
+                                    <!-- <div class="input-group-append">
                                     <div class="input-group-text">
                                     <span class="fas fa-user"></span>
                                     </div>
-                                    </div> --}}
+                                    </div> -->
 
                                     @if ($errors->has('name'))
                                         <div class="invalid-feedback">
@@ -72,11 +72,11 @@
                                     <input type="email"
                                         class="form-control form-control-lg {{ $errors->has('email') ? 'is-invalid' : '' }}"
                                         name="email" placeholder="Email" value="{{ old('email') }}" required>
-                                    {{-- <div class="input-group-append">
+                                    <!-- <div class="input-group-append">
                                     <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>
                                     </div>
-                                    </div> --}}
+                                    </div> -->
 
                                     @if ($errors->has('email'))
                                         <div class="invalid-feedback">
@@ -90,11 +90,11 @@
                                     <input type="password"
                                         class="form-control form-control-lg {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                         name="password" placeholder="Password" required>
-                                    {{-- <div class="input-group-append">
+                                    <!-- <div class="input-group-append">
                                     <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
                                     </div>
-                                    </div> --}}
+                                    </div> -->
 
                                     @if ($errors->has('password'))
                                         <div class="invalid-feedback">
@@ -108,11 +108,11 @@
                                     <input type="password"
                                         class="form-control form-control-lg {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
                                         name="password_confirmation" placeholder="Retype password" required>
-                                    {{-- <div class="input-group-append">
+                                    <!-- <div class="input-group-append">
                                     <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
                                     </div>
-                                    </div> --}}
+                                    </div> -->
 
                                     @if ($errors->has('pasword_confirmation'))
                                         <div class="invalid-feedback">
@@ -122,29 +122,28 @@
 
                                 </div>
 
-                                {{-- <div class="mb-4">
+                                <!-- <div class="mb-4">
                                     <div class="form-check">
                                         <label class="form-check-label text-muted">
                                             <input type="checkbox" class="form-check-input">
                                             I agree to all Terms & Conditions
                                         </label>
                                     </div>
-                                </div> --}}
+                                </div>  -->
 
-                                {{-- <div class="mt-3">
+                                <!-- <div class="mt-3">
                                     <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
                                         href="{{ route('pengaduan.index') }}">MASUK</a>
-                                </div> --}}
+                                </div> -->
 
                                 <div class="row">
                                     <div class="col-12">
                                       <button type="submit" class="btn btn-primary btn-block">Daftar</button>
                                     </div>
-                                    <!-- /.col -->
                                 </div>
 
                                 <div class="text-center mt-4 font-weight-light">
-                                    Already have an account? <a href="login.html" class="text-primary">Login</a>
+                                    Already have an account? <a href="{{ route('login') }}" class="text-primary">Login</a>
                                 </div>
                             </form>
                         </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\user;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Facade;
 
 class AuthController extends Controller
 {
@@ -16,22 +17,23 @@ class AuthController extends Controller
 
     public function postlogin(Request $request)
     {
-        // $message = ([
-        //     'required'  => "Data tidak boleh kosong!"
-        // ]);
-
-        // $this->validate($request,[
-        //     'email'        => 'required',
-        //     'password'     => 'required'
-        // ], $message);
-
-        if ($request['email'] == null && $request['email'] == null) {
-            return redirect('login')->with('error','Data tidak boleh kosong !!');
-        } elseif (Auth::attempt($request->only('email','password'))) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect('dashboard');
+        } elseif ($request['email'] == null && $request['email'] == null) {
+            return redirect('login')->with('error', 'Data tidak boleh kosong !!');
+        } elseif (Auth::attempt($request->only('email', 'password'))) {
             return redirect()->back();
-        } else{
-            return redirect()->route('login')->with('error','Email atau password anda salah !!');
+        } else {
+            return redirect()->route('login')->with('error', 'Email atau password anda salah !!');
         }
+
+        // if ($request['email'] == null && $request['email'] == null) {
+        //     return redirect('login')->with('error','Data tidak boleh kosong !!');
+        // } elseif (Auth::attempt($request->only('email','password'))) {
+        //     return redirect()->back();
+        // } else {
+        //     return redirect()->route('login')->with('error','Email atau password anda salah !!');
+        // } 
 
         // if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
         //     return redirect()->back();
@@ -46,7 +48,7 @@ class AuthController extends Controller
 
     public function postregister(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'nik'       => 'required|min:16',
             'name'      => 'required|min:5',
             'email'     => 'required|email|unique:users',
@@ -59,7 +61,7 @@ class AuthController extends Controller
             'email'     => $request->email,
             'password'  => bcrypt($request->password)
         ]);
-    
+
         // if($request->hasFile('foto')) {
         //     $request->file('foto')->move('img/', $request->file('foto')->getClientOriginalName());
         //     $user->foto = $request->file('foto')->getClientOriginalName();
