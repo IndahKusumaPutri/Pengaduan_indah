@@ -12,7 +12,7 @@ use App\Models\Province;
 use App\Models\District;
 use App\Models\Regency;
 use App\Models\Village;
-use App\user;
+use App\User;
 use App\Auth;
 
 
@@ -31,7 +31,7 @@ class AuthController extends Controller
             return redirect('login')->with('error', 'Data tidak boleh kosong !!');
         } elseif (Auth::attempt($request->only('email', 'password'))) {
             return redirect()->back();
-        } else {
+        } else { 
             return redirect()->route('login')->with('error', 'Email atau password anda salah !!');
         }
 
@@ -76,7 +76,7 @@ class AuthController extends Controller
         //     $user->save();
         // }
 
-        Auth::loginUsingId($user->id);
+        User::loginUsingId($user->id);
 
         return redirect()->route('pengaduan.index');
     }

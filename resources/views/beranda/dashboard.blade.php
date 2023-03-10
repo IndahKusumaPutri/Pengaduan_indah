@@ -8,7 +8,7 @@
             <div class="col-md-12 grid-margin">
                 <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                        <h3 class="font-weight-bold"> Hallo {{ Auth::user()->name }} !</h3>
+                        <h3 class="font-weight-bold"> Hallo !</h3>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
                                 <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
@@ -51,7 +51,7 @@
                     </div>
                 </div> -->
 
-                <div class="col-md-6 grid-margin stretch-card">
+                <div class="col-md-20 grid-margin stretch-card">
                     <div class="row">
 
                         <div class="col-md-6 mb-4 stretch-card transparent">
