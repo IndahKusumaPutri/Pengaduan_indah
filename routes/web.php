@@ -24,10 +24,10 @@ Route::get('/petugas/create','AuthController@create')->name('petugas.create');
 Route::post('/petugas/store','AuthController@store')->name('petugas.store');
 
 //indoregion
-Route::post('/getdesa', 'IndoRegionController@getDesa')->name('getdesa');
-Route::post('/getkota', 'IndoRegionController@getKota')->name('getkota');
-Route::post('/getkecamatan', 'IndoRegionController@getkecamatan')->name('getkecamatan');
-Route::post('/getkabupaten', 'IndoRegionController@getkabupaten')->name('getkabupaten');
+Route::post('/getdesa', 'AuthController@getDesa')->name('getdesa');
+Route::post('/getkota', 'AuthController@getKota')->name('getkota');
+Route::post('/getkecamatan', 'AuthController@getkecamatan')->name('getkecamatan');
+Route::post('/getkabupaten', 'AuthController@getkabupaten')->name('getkabupaten');
 
 //login dan regis
 Route::get('/register', 'AuthController@getregister')->name('register')->middleware('guest');
