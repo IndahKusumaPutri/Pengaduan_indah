@@ -19,6 +19,16 @@ Route::get('/', function () {
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
+Route::get('/petugas','AuthController@indexPetugas')->name('petugas.index');
+Route::get('/petugas/create','AuthController@create')->name('petugas.create');
+Route::post('/petugas/store','AuthController@store')->name('petugas.store');
+
+//indoregion
+Route::post('/getdesa', 'IndoRegionController@getDesa')->name('getdesa');
+Route::post('/getkota', 'IndoRegionController@getKota')->name('getkota');
+Route::post('/getkecamatan', 'IndoRegionController@getkecamatan')->name('getkecamatan');
+Route::post('/getkabupaten', 'IndoRegionController@getkabupaten')->name('getkabupaten');
+
 //login dan regis
 Route::get('/register', 'AuthController@getregister')->name('register')->middleware('guest');
 Route::post('/register', 'AuthController@postregister')->middleware('guest');
@@ -39,7 +49,7 @@ Route::delete('/pengaduan/delete/{id}', 'PengaduanController@destroy')->name('pe
 //tanggapan
 Route::get('tanggapan', 'TanggapanController@index')->name('tanggapan.index');
 Route::get('tanggapan/create', 'TanggapanController@create')->name('tanggapan.create');
-Route::post('tanggapan/store','TanggapanController@store')->name('tanggapan.store');
+Route::post('tanggapan/store', 'TanggapanController@store')->name('tanggapan.store');
 Route::get('tanggapan/edit/{id}', 'TanggapanController@edit')->name('tanggapan.edit');
 Route::get('tanggapan/update/{id}', 'TanggapanController@update')->name('tanggapan.update');
 Route::delete('tanggapan/delete/{id}', 'TanggapanController@destroy')->name('tanggapan.destroy');

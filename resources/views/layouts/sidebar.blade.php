@@ -8,15 +8,29 @@
         </li>
 
         <li class="nav-item menu-open">
-            <a class="nav-link" data-toggle="collapse" href="" aria-expanded="false" aria-controls="">
+            <a class="nav-link" data-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data">
                 <i class="icon-bar-graph menu-icon"></i>
                 <span class="menu-title">Data</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse">
+            <div class="collapse" id="data">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{ route('pengaduan.index') }}">Pengaduan</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('tanggapan.index') }}">Tanggapan</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item menu-open">
+            <a class="nav-link" data-toggle="collapse" href="#data-user" aria-expanded="false" aria-controls="data-user">
+                <i class="icon-bar-graph menu-icon"></i>
+                <span class="menu-title">Data User</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse " id='data-user'>
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('petugas.index') }}">Petugas</a></li>
+                    <!-- <li class="nav-item"> <a class="nav-link" href="{{ route('tanggapan.index') }}">Tanggapan</a></li> -->
                 </ul>
             </div>
         </li>

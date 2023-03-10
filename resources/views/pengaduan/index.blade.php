@@ -50,7 +50,7 @@
                                         <thead>
 
                                             <!-- <tr class="table-info"> -->
-                                            <tr>
+                                            <tr class="table-info">
                                                 <th>No</th>
                                                 <th>Tanggal Pengaduan</th>
                                                 <th>NIK</th>
