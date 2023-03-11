@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Carbon;
@@ -13,7 +13,6 @@ use App\Models\District;
 use App\Models\Regency;
 use App\Models\Village;
 use App\User;
-use App\Auth;
 
 
 class AuthController extends Controller
@@ -63,7 +62,7 @@ class AuthController extends Controller
             'password'  => 'required|min:8|confirmed',
         ]);
 
-        $user = User::create([
+        $userId = User::create([
             'nik'       => $request->nik,
             'name'      => $request->name,
             'email'     => $request->email,
@@ -76,9 +75,9 @@ class AuthController extends Controller
         //     $user->save();
         // }
 
-        User::loginUsingId($user->id);
+        Auth::loginUsingId($userId);
 
-        return redirect()->route('pengaduan.index');
+        return redirect()->route('dashboard');
     }
 
     public function logout()
