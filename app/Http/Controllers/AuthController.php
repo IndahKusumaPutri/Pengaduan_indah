@@ -12,6 +12,7 @@ use App\Models\Province;
 use App\Models\District;
 use App\Models\Regency;
 use App\Models\Village;
+use App\Petugas;
 use App\User;
 
 
@@ -108,7 +109,7 @@ class AuthController extends Controller
 
     public function indexPetugas()
     {
-        $petugas = Auth::all();
+        $petugas = Petugas::all();
         return view('petugas.index', compact('petugas'));
     }
 
@@ -118,45 +119,67 @@ class AuthController extends Controller
         return view('petugas.create', compact('provinces'));
     }
     
-    public function store()
+    public function store(Request $request)
     {
-        $petugas = Auth::all();
+        $petugas = Petugas::all();
 
-        $validate = Validator::make($petugas, [
-            'nik' => ['required', 'min:16', 'max:16', 'unique:petugas'],
-            'name' => ['required', 'string'],
-            'email' => ['required', 'email', 'string', 'unique:petugas'],
-            'username' => ['required', 'string', 'regex:/^\S*$/u', 'unique:petugas', 'unique:petugas,username'],
-            'jenis_kelamin' => ['required'],
-            'password' => ['required', 'min:6'],
-            'telp' => ['required', 'regex:/(08)[0-9]/'],
-            'alamat' => ['required'],
-            'rt' => ['required'],
-            'rw' => ['required'],
-            'kode_pos' => ['required'],
-            'province_id' => ['required'],
-            'regency_id' => ['required'],
-            'district_id' => ['required'],
-            'village_id' => ['required'],
+        $this->validate($request,[
+            'nik' => 'required|max:16',
+            'name' => 'required',
+            'email' => 'required',
+            'email_verified_at' => 'required',
+            'password' => 'required',
+            'telp' => 'required',
+            'jenis_kel' => 'required',
+            'level' => 'required',
+            'alamat' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
+            'kode_pos' => 'required',
         ]);
 
-        Auth::create([
-            'nik' => $petugas['nik'],
-            'name' => $petugas['name'],
-            'email' => $petugas['email'],
-            'username' => strtolower($petugas['username']),
-            'jenis_kelamin' => $petugas['jenis_kelamin'],
-            'password' => Hash::make($petugas['password']),
-            'telp' => $petugas['telp'],
-            'alamat' => $petugas['alamat'],
+        // $validate = Validator::make($request->(), [
+        //     'nik' => 'required', 'min:16', 'max:16', 'unique:petugas',
+        //     'name' => ['required', 'string'],
+        //     'email' => ['required', 'email', 'string', 'unique:petugas'],
+        //     'username' => ['required', 'string', 'regex:/^\S*$/u', 'unique:petugas', 'unique:petugas,username'],
+        //     'jenis_kelamin' => ['required'],
+        //     'password' => ['required', 'min:6'],
+        //     'telp' => ['required', 'regex:/(08)[0-9]/'],
+        //     'alamat' => ['required'],
+        //     'rt' => ['required'],
+        //     'rw' => ['required'],
+        //     'kode_pos' => ['required'],
+        //     'province_id' => ['required'],
+        //     'regency_id' => ['required'],
+        //     'district_id' => ['required'],
+        //     'village_id' => ['required'],
+        // ]);
+
+        Petugas::create([
+            'nik' => $request->nik,
+            'name' => $request->name,
+            'email' => $request->email,
             'email_verified_at' => Carbon::now(),
-            'rt' => $petugas['rt'],
-            'rw' => $petugas['rw'],
-            'kode_pos' => $petugas['kode_pos'],
-            'province_id' => $petugas['province_id'],
-            'regency_id' => $petugas['regency_id'],
-            'district_id' => $petugas['district_id'],
-            'village_id' => $petugas['village_id'],
+            'password' => $request->password,
+            'telp' => $request->telp,
+            'jenis_kel' => $request->jenis_kel,
+            'level' => $request->level,
+            'alamat' => $request->alamat,
+            'rt' => $request->rt,
+            'rw' => $request->rw,
+            'kode_pos' => $request->kode_pos,
+            'province_id' => $request->province_id,
+            'regency_id' => $request->regency_id,
+            'district_id' => $request->district_id,
+            'village_id' => $request->village_id
+            // 'username' => strtolower($petugas['username'])
+        ]);
+
+        User::create([
+            'name'      => bcrypt($request->name),
+            'email'     => $request->email,
+            'password'  => bcrypt($request->password)
         ]);
 
         return redirect()->route('petugas.index');
@@ -166,32 +189,39 @@ class AuthController extends Controller
     {
         $province_id = $request->province_id;
         $regencies = Regency::where('province_id', $province_id)->get();
-        $option = "<option value=''>-- Pilih Kota/Kabupaten --</option>";
-        foreach($regencies as $regency) {
-            $option .= "<option value='$regency->id'>$regency->name</option>";
+
+        $option = "<option>Pilih Kota...</option>";
+        foreach ($regencies as $kota ) {
+            $option.= "<option value='$kota->id'>$kota->name</option>";  
         }
-        echo $option;
+
+        echo$option;
     }
 
     public function getKecamatan(Request $request)
     {
         $regency_id = $request->regency_id;
         $districts = District::where('regency_id', $regency_id)->get();
-        $option = "<option value=''>-- Pilih Kecamatan --</option>";
-        foreach($districts as $district) {
-            $option .= "<option value='$district->id'>$district->name</option>";
+
+        $option = "<option>Pilih Kecamatan...</option>";
+        foreach ($districts as $kecamatan ) {
+            $option.= "<option value='$kecamatan->id'>$kecamatan->name</option>";  
         }
+
         echo $option;
     }
 
-    public function getDesa(Request $request)
+    public function getKelurahan(Request $request)
     {
-        $district_id = $request->district_id;
-        $villages = Village::where('district_id', $district_id)->get();
-        $option = "<option value=''>-- Pilih Kelurahan/Desa --</option>";
-        foreach($villages as $village) {
-            $option .= "<option value='$village->id'>$village->name</option>";
+        $village_id = $request->village_id;
+        $villages = Village::where('district_id', $village_id)->get();
+
+        $option = "<option>Pilih Kelurahan...</option>";
+        foreach ($villages as $kelurahan ) {
+            $option.= "<option value='$kelurahan->id'>$kelurahan->name</option>";  
         }
+
         echo $option;
     }
+
 }

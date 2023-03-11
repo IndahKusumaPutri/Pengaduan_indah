@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAuthsTable extends Migration
+class CreatePetugasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAuthsTable extends Migration
      */
     public function up()
     {
-        Schema::create('auths', function (Blueprint $table) {
+        Schema::create('petugas', function (Blueprint $table) {
             $table->id();
             $table->char('nik', 17);
             $table->string('name', 50);
@@ -43,6 +43,6 @@ class CreateAuthsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('auths');
+        Schema::dropIfExists('petugas');
     }
 }

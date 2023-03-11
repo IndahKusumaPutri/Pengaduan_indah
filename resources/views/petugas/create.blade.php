@@ -2,304 +2,323 @@
 @extends('layouts.app')
 
 @section('content')
+    <!doctype html>
+    <html>
 
-<!doctype html>
-<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+        <title>Pengaduan</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-    <title>Pengaduan</title>
-</head>
+    <body>
+        <div class="container">
+            <div class="card mt-5">
+                <div class="card-header text-center">
+                    TAMBAH DATA
+                </div>
+                <div class="card-body">
+                    <!-- <a href="/pengaduan" class="btn btn-primary">Kembali</a> -->
+                    <br />
+                    <br />
 
-<body>
-    <div class="container">
-        <div class="card mt-5">
-            <div class="card-header text-center">
-                TAMBAH DATA
-            </div>
-            <div class="card-body">
-                <!-- <a href="/pengaduan" class="btn btn-primary">Kembali</a> -->
-                <br />
-                <br />
+                    <form method="post" action="/petugas/store" enctype="multipart/form-data">
 
-                <form method="post" action="/petugas/store" enctype="multipart/form-data">
+                        {{ csrf_field() }}
 
-                    {{ csrf_field() }}
+                        <div class="form-group">
+                            <label>NIK</label>
+                            <input type="number" class="form-control" name="nik" value="{{ old('nik') }}" placeholder="Masukkan NIK">
 
-                    <div class="form-group">
-                        <label>NIK</label>
-                        <input type="number" class="form-control" name="nik" placeholder="Masukkan Nik">
+                            @if ($errors->has('nik'))
+                                <div class="text-danger">
+                                    {{ $errors->first('nik') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('nik'))
-                        <div class="text-danger">
-                            {{ $errors->first('nik') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Nama</label>
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama">
 
-                    <div class="form-group">
-                        <label>Nama</label>
-                        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama">
+                            @if ($errors->has('name'))
+                                <div class="text-danger">
+                                    {{ $errors->first('name') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('name'))
-                        <div class="text-danger">
-                            {{ $errors->first('name') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" value="{{ old('email') }}"
+                                placeholder="Masukkan Email"></textarea>
 
-                    <div class="form-group">
-                        <label>Email</label>
-                        <textarea name="email" class="form-control" placeholder="Masukkan Email"></textarea>
+                            @if ($errors->has('email'))
+                                <div class="text-danger">
+                                    {{ $errors->first('email') }}
+                                </div>
+                            @endif
 
-                        @if($errors->has('email'))
-                        <div class="text-danger">
-                            {{ $errors->first('email')}}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="text" class="form-control" name="password" value="{{ old('password') }}" placeholder="Masukkan Password">
 
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="text" class="form-control" name="password" placeholder="Masukkan Password">
+                            @if ($errors->has('password'))
+                                <div class="text-danger">
+                                    {{ $errors->first('password') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('password'))
-                        <div class="text-danger">
-                            {{ $errors->first('password') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Telepon</label>
+                            <input type="number" class="form-control" name="telp" value="{{ old('telp') }}" placeholder="Masukkan No Telp">
 
-                    <div class="form-group">
-                        <label>Telepon</label>
-                        <input type="number" class="form-control" name="telp" placeholder="Masukkan No Telp">
+                            @if ($errors->has('telp'))
+                                <div class="text-danger">
+                                    {{ $errors->first('telp') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('telp'))
-                        <div class="text-danger">
-                            {{ $errors->first('telp') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label for="example-text-input" name="jenis_kel" class="form-control-label">Jenis
+                                Kelamin</label>
+                            <label for="jenis_kel">
+                                <input type="radio" name="jenis_kel" value="Laki-laki" id="jenis_kel" checked>&nbsp
+                                Laki-Laki &nbsp &nbsp &nbsp
+                                <input type="radio" name="jenis_kel" value="Perempuan" id="jenis_kel">&nbsp
+                                Perempuan
+                            </label>
 
-                    <div class="form-group">
-                        <label>Jenis Kelamin</label>
-                        <input type="number" class="form-control" name="jenis_kel">
+                            @if ($errors->has('jenis_kel'))
+                                <div class="text-danger">
+                                    {{ $errors->first('jenis_kel') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('jenis_kel'))
-                        <div class="text-danger">
-                            {{ $errors->first('jenis_kel') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Level</label>
+                            <select class="col-sm-12 form-control" name="level" aria-label="Default select example">
+                                <option selected> Pilih Level </option>
+                                <option value="1">User</option>
+                                <option value="2">Petugas</option>
+                            </select>
 
-                    <div class="form-group">
-                        <label>Level</label>
-                        <input type="number" class="form-control" name="level" placeholder="Masukkan Level">
+                            @if ($errors->has('level'))
+                                <div class="text-danger">
+                                    {{ $errors->first('level') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('level'))
-                        <div class="text-danger">
-                            {{ $errors->first('level') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Alamat</label>
+                            <textarea class="form-control" name="alamat" value="{{ old('alamat') }}" placeholder="Masukkan Alamat"></textarea>
 
-                    <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat">
+                            @if ($errors->has('alamat'))
+                                <div class="text-danger">
+                                    {{ $errors->first('alamat') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('alamat'))
-                        <div class="text-danger">
-                            {{ $errors->first('alamat') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Rt</label>
+                            <input type="text" class="form-control" name="rt" value="{{ old('rt') }}" placeholder="Masukkan rt">
 
-                    <div class="form-group">
-                        <label>Rt</label>
-                        <input type="text" class="form-control" name="rt" placeholder="Masukkan rt">
+                            @if ($errors->has('rt'))
+                                <div class="text-danger">
+                                    {{ $errors->first('rt') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('rt'))
-                        <div class="text-danger">
-                            {{ $errors->first('rt') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Rw</label>
+                            <input type="text" class="form-control" name="rw" value="{{ old('rw') }}" placeholder="Masukkan rw">
 
-                    <div class="form-group">
-                        <label>Rw</label>
-                        <input type="text" class="form-control" name="rw" placeholder="Masukkan rw">
+                            @if ($errors->has('rw'))
+                                <div class="text-danger">
+                                    {{ $errors->first('rw') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('rw'))
-                        <div class="text-danger">
-                            {{ $errors->first('rw') }}
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group">
+                            <label>Kode Pos</label>
+                            <input type="text" class="form-control" name="kode_pos" value="{{ old('kode_pos') }}" placeholder="Masukkan ">
 
-                    <div class="form-group">
-                        <label>Kode Pos</label>
-                        <input type="text" class="form-control" name="kode_pos" placeholder="Masukkan ">
+                            @if ($errors->has('kode_pos'))
+                                <div class="text-danger">
+                                    {{ $errors->first('kode_pos') }}
+                                </div>
+                            @endif
 
-                        @if ($errors->has('kode_pos'))
-                        <div class="text-danger">
-                            {{ $errors->first('kode_pos') }}
                         </div>
-                        @endif
 
-                    </div>
+                        {{-- <div class="form-group">
+                            <!-- <label>Provinsi</label> -->
+                            <label for="example-text-input" class="form-control-label">Provinsi</label>
+                            <select id="province_id" class="form-control @error('province_id') is-invalid @enderror"
+                                name="province_id">
+                                <option value="">--Pilih Provinsi--</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                @endforeach
+                            </select>
+                        </div> --}}
 
-                    <div class="form-group">
-                        <!-- <label>Provinsi</label> -->
-                        <label for="example-text-input" class="form-control-label">Provinsi</label>
-                        <select id="province_id" class="form-control @error('province_id') is-invalid @enderror" name="province_id">
-                            <option value="">--Pilih Provinsi--</option>
-                            @foreach ($provinces as $province)
-                            <option value="{{ $province->id }}">{{ $province->name }}</option>
-                            @endforeach
-                        </select>
-
-                        @if ($errors->has('province_id'))
-                        <div class="text-danger">
-                            {{ $errors->first('province_id') }}
+                        <div class="form-group col-md-12">
+                            <label class="form-label" for="province_id">Provinsi:</label>
+                            <select name="province_id" id="province_id" class="selectpicker form-control" data-style="py-0">
+                                <option value="">Pilih Provinsi...</option>
+                                @foreach ($provinces as $provinsi)
+                                    <option value="{{ $provinsi->id }}">{{ $provinsi->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label" for="regency_id">Kota:</label>
+                            <select name="regency_id" id="regency_id" class="selectpicker form-control"
+                                data-style="py-0">
 
-                    <div class="form-group">
-                        <!-- <label>Kabupaten/Kota</label> -->
-                        <label for="example-text-input" class="form-control-label">Kabupaten/Kota</label>
-                        <select id="regency_id" class="form-control @error('regency_id') is-invalid @enderror" name="regency_id">
-                        </select>
-
-                        @if ($errors->has('regency_id'))
-                        <div class="text-danger">
-                            {{ $errors->first('regency_id') }}
+                            </select>
                         </div>
-                        @endif
+                        <div class="form-group col-md-12">
+                            <label class="form-label" for="village_id">Kecamatan:</label>
+                            <select name="village_id" id="village_id" class="selectpicker form-control"
+                                data-style="py-0">
 
-                    </div>
-
-                    <div class="form-group">
-                        <!-- <label>Kecamatan</label> -->
-                        <label for="example-text-input" class="form-control-label">Kecamatan</label>
-                        <select id="district_id" class="form-control @error('district_id') is-invalid @enderror" name="district_id">
-                        </select>
-
-                        @if ($errors->has('district_id'))
-                        <div class="text-danger">
-                            {{ $errors->first('district_id') }}
+                            </select>
                         </div>
-                        @endif
+                        <div class="form-group col-md-12">
+                            <label class="form-label" for="district_id">Kelurahan:</label>
+                            <select name="district_id" id="district_id" class="selectpicker form-control"
+                                data-style="py-0">
 
-                    </div>
-
-                    <div class="form-group">
-                        <!-- <label>Kelurahan</label> -->
-                        <label for="example-text-input" class="form-control-label">Desa</label>
-                        <select id="village_id" class="form-control @error('village_id') is-invalid @enderror" name="village_id">
-                        </select>
-
-                        @if ($errors->has('village_id'))
-                        <div class="text-danger">
-                            {{ $errors->first('village_id') }}
+                            </select>
                         </div>
-                        @endif
 
-                    </div>
-
-                    <div class="form-group">
-                        <a href="{{ route('pengaduan.index')}}" class="btn btn-outline-danger">Kembali</a>
-                        <button type="submit" class="btn btn-outline-primary" onclick="return confirm('Yakin anda ingin menyimpan data tersebut?')">Simpan</i></button>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <a href="{{ route('pengaduan.index') }}" class="btn btn-outline-danger">Kembali</a>
+                            <button type="submit" class="btn btn-outline-primary"
+                                onclick="return confirm('Yakin anda ingin menyimpan data tersebut?')">Simpan</i></button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    </body>
 
+    </html>
+
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
     <script>
         $(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $(function() {
-                $('#province_id').on('change', function() {
-                    let province_id = $('#province_id').val();
-                    console.log(province_id);
+            $('#province_id').on('change', function() {
+                let province_id = $('#province_id').val();
+
+                if (province_id) {
                     $.ajax({
-                        type: 'POST',
-                        url: "{{ route('getkota') }}",
+                        url: "{{ route('getKota') }}",
+                        type: "POST",
                         data: {
                             province_id: province_id
                         },
                         cache: false,
-                        success: function(message) {
-                            $('#regency_id').html(message);
-                            $('#district_id').html('');
+                        success: function($msg) {
+                            $('#regency_id').html($msg);
                             $('#village_id').html('');
+                            $('#district_id').html('');
                         },
                         error: function(data) {
-                            console.log(`Error on ${data}`);
+                            console.log('error:', data);
                         }
-                    });
-                });
-                $('#regency_id').on('change', function() {
-                    let regency_id = $('#regency_id').val();
+                    })
+                }
+            })
+            $('#regency_id').on('change', function() {
+                let regency_id = $('#regency_id').val();
+                if (regency_id) {
                     $.ajax({
-                        type: 'POST',
-                        url: "{{ route('getkecamatan') }}",
+                        url: "{{ route('getKecamatan') }}",
+                        type: "POST",
                         data: {
                             regency_id: regency_id
                         },
                         cache: false,
-                        success: function(message) {
-                            $('#district_id').html(message);
-                            $('#village_id').html('');
+                        success: function($msg) {
+                            $('#village_id').html($msg);
+                            $('#district_id').html('');
                         },
                         error: function(data) {
-                            console.log(`Error on ${data}`);
-                        }
-                    });
-                });
-                $('#district_id').on('change', function() {
-                    let district_id = $('#district_id').val();
-                    $.ajax({
-                        type: 'POST',
-                        url: "{{ route('getdesa') }}",
-                        data: {
-                            district_id: district_id
-                        },
-                        cache: false,
-                        success: function(message) {
-                            $('#village_id').html(message);
-                        },
-                        error: function(data) {
-                            console.log(`Error on ${data}`);
+                            console.log('error:', data);
                         }
                     })
-                })
+                }
             })
+            $('#village_id').on('change', function() {
+                let village_id = $('#village_id').val();
+                if (village_id) {
+                    $.ajax({
+                        url: "{{ route('getKelurahan') }}",
+                        type: "POST",
+                        data: {
+                            village_id: village_id
+                        },
+                        cache: false,
+                        success: function($msg) {
+                            $('#district_id').html($msg);
+                        },
+                        error: function(data) {
+                            console.log('error:', data);
+                        }
+                    })
+                }
+            })
+            $('#inputGambar_profile').on('change', function() {
+                //get the file name
+                var fileName = $(this).val();
+                var panjangnamafile = fileName.length;
+
+                if (panjangnamafile > 22) {
+                    hasilpotong = fileName.substring(0, 22);
+                    $(this).next('.custom-file-label').html(hasilpotong);
+                } else {
+                    $(this).next('.custom-file-label').html(fileName);
+                }
+            })
+
+            function filePreview(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#preview').attr('src', e.target.result)
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $(function() {
+                $("#inputGambar_profile").change(function() {
+                    filePreview(this);
+                });
+            });
         });
     </script>
-
-</body>
-
-</html>
-
 @endsection

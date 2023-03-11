@@ -8,25 +8,5 @@ use Illuminate\Database\Eloquent\Factories\AuthController;
 class Auth extends Model
 {
     // protected $timestamps = false;
-    protected $table = 'auths';
-    
-    protected $primaryKey = 'nik';
-
-    protected $fillable = [
-        'nik',
-        'name',
-        'email',
-        'password',
-        'telp',
-        'jenis_kel',
-        'level',
-        'alamat',
-        'rt',
-        'rw',
-        'kode_pos',
-        'province_id',
-        'regency_id',
-        'district_id',
-        'village_id'
-    ];
+   //
 }

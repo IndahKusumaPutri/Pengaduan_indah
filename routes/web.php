@@ -24,10 +24,9 @@ Route::get('/petugas/create','AuthController@create')->name('petugas.create');
 Route::post('/petugas/store','AuthController@store')->name('petugas.store');
 
 //indoregion
-Route::post('/getdesa', 'AuthController@getDesa')->name('getdesa');
-Route::post('/getkota', 'AuthController@getKota')->name('getkota');
-Route::post('/getkecamatan', 'AuthController@getkecamatan')->name('getkecamatan');
-Route::post('/getkabupaten', 'AuthController@getkabupaten')->name('getkabupaten');
+Route::post('getKota', 'AuthController@getKota')->name('getKota');//getkota
+Route::post('getKecamatan', 'AuthController@getKecamatan')->name('getKecamatan');//getkemacatan
+Route::post('getKelurahan', 'AuthController@getKelurahan')->name('getKelurahan');//getkelurahan          
 
 //login dan regis
 Route::get('/register', 'AuthController@getregister')->name('register')->middleware('guest');
