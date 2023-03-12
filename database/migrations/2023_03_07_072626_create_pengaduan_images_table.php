@@ -15,8 +15,8 @@ class CreatePengaduanImagesTable extends Migration
     {
         Schema::create('pengaduan_images', function (Blueprint $table) {
             $table->id();
-            $table->string('pengaduan_unique_id')->unique();
-            $table->string('image')->nullable();
+            $table->string('id_pengaduan')->unique();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

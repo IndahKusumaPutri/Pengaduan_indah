@@ -9,10 +9,10 @@ class Pengaduan extends Model
     protected $table = 'pengaduans';
     
     protected $fillable = [
-        'unique_id ', 
         'tgl_pengaduan', 
         'nik', 
         'isi_laporan', 
+        'foto',
         'status'
     ];
     // protected $timestamps = 'false';

@@ -36,9 +36,9 @@ Route::post('/login', 'AuthController@postlogin')->middleware('guest');
 Route::get('/logout', 'AuthController@logout')->middleware('auth')->name('logout');
 
 //pengaduan
-Route::get('/pengaduan', 'PengaduanController@index')->name('pengaduan.index');
-Route::get('/pengaduan/create', 'PengaduanController@create');
-Route::post('/pengaduan/store', 'PengaduanController@store')->name('pengaduan.store');
+Route::get('/pengaduan', 'MasyarakatController@index')->name('pengaduan.index');
+Route::get('/pengaduan/create', 'MasyarakatController@create')->name('pengaduan.create');
+Route::post('/pengaduan/store', 'MasyarakatController@store')->name('pengaduan.store');
 Route::get('/pengaduan/edit/{id}', 'PengaduanController@edit')->name('pengaduan.edit');
 Route::get('/pengaduan/update/{id}', 'PengaduanController@update')->name('pengaduan.update');
 Route::delete('/pengaduan/delete/{id}', 'PengaduanController@destroy')->name('pengaduan.destroy');

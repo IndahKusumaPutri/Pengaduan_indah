@@ -17,6 +17,12 @@ use App\User;
 
 class AuthController extends Controller
 {
+    public function index()
+    {
+        $level = Auth::user();
+        return view('masyarakat.index');
+    }
+
     public function getlogin()
     {
         return view('auth.login');
@@ -120,7 +126,7 @@ class AuthController extends Controller
     
     public function store(Request $request)
     {
-        $user = User::all();
+        $user = Auth::user()->nik;
 
         $this->validate($request,[
             'nik' => 'required|max:16',
@@ -159,7 +165,6 @@ class AuthController extends Controller
             'nik' => $request->nik,
             'name' => $request->name,
             'email' => $request->email,
-            'email_verified_at' => Carbon::now(),
             'password' => $request->password,
             'telp' => $request->telp,
             'jenis_kel' => $request->jenis_kel,

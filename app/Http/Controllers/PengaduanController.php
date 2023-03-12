@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Pengaduan;
 use Carbon\Carbon;
 use App\Models\Pengaduan_Image;
@@ -19,6 +20,7 @@ class PengaduanController extends Controller
      */
     public function index()
     {
+        
         $pengaduan = Pengaduan::all();
         return view('pengaduan.index', compact('pengaduan'));
     }
@@ -49,6 +51,7 @@ class PengaduanController extends Controller
      */
     public function create()
     {
+       
         return view('pengaduan.create');
     }
 
@@ -64,17 +67,18 @@ class PengaduanController extends Controller
 
             'tgl_pengaduan' => 'required',
             'isi_laporan' => 'required',
-            'foto.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000|required',
+            'foto.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000|required'
+
         ]);
 
-        $nik = Auth::user()->nik;
+        $nik = User::user();    
 
         $uniqID = Carbon::now()->timestamp . uniqid();
-        $data = new Pengaduan;
+        /* $data = new Pengaduan;
         $data->unique_id  = $uniqID;
         $data->tgl_pengaduan = $request->tgl_pengaduan;
         $data->nik = $nik;
-        $data->isi_laporan = $request->isi_laporan;
+        $data->isi_laporan = $request->isi_laporan; */
 
         foreach ($request->foto as $key => $image) {
             $pimage = new Pengaduan_Image();
@@ -86,17 +90,17 @@ class PengaduanController extends Controller
             $pimage->foto = $imageName;
             $pimage->save();
         }
-        $data->save();
+        //$data->save();
 
-        // Pengaduan::create($request, [
-        //     'tgl_pengaduan' => $request->tgl_pengaduan,
-        //     'nik'           => $request->nik,
-        //     'isi_laporan'   => $request->isi_laporan,
-        //     'foto'          => $request->foto,
-        //     'status'        => $request->status
-        // ]);
+        Pengaduan::create($request, [
+            'tgl_pengaduan' => $request->tgl_pengaduan,
+            'nik'           => $request->nik,
+            'isi_laporan'   => $request->isi_laporan,
+            'foto'          => $request->foto,
+            'status'        => $request->status
+        ]);
 
-        Pengaduan::create($request->all());
+        // Pengaduan::create($request->all());
 
         return redirect()->route('pengaduan.index')->with('Data ditambah', 'Data berhasil ditambah');
     }

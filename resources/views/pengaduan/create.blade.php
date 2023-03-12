@@ -33,6 +33,18 @@
                         <!-- <form method="post" action="/pengaduan/store" enctype="multipart/form-data"> {{ csrf_field() }} -->
 
                         <div class="form-group col-12">
+                            <label>NIK</label>
+                                <input type="number" class="form-control" name="nik">
+
+                                @if ($errors->has('nik'))
+                                <div class="text-danger">
+                                    {{ $errors->first('nik') }}
+                                </div>
+                                @endif
+
+                        </div>
+
+                        <div class="form-group col-12">
                             <label>Tanggal Pengaduan</label>
                             <input type="date" class="form-control" name="tgl_pengaduan">
 
@@ -71,6 +83,7 @@
                         <div class="form-group col-12">
                             <label class="form-label" for="foto">Foto Pengaduan</label>
                             <input type="file" class="form-control" id="select-image" name="foto[]" multiple />
+                            <br />
                             <div class="filearray">
                             </div>
                             @if ($errors->has('foto'))
