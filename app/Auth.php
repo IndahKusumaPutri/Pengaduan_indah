@@ -7,6 +7,5 @@ use Illuminate\Database\Eloquent\Factories\AuthController;
 
 class Auth extends Model
 {
-    // protected $timestamps = false;
    //
 }

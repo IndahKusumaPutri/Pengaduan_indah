@@ -1,5 +1,5 @@
 <!-- Content Header (Page header) -->
-@extends('layouts.app')
+@extends('layouts.user.app')
 
 @section('content')
 
@@ -15,72 +15,73 @@
 
 <body>
     <div class="container">
-        <div class="card mt-5">
-            <div class="card-header text-center">
-                TAMBAH DATA
+        <div class="row">
+            <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                <h3 class="font-weight-bold">Laporkan!</h3>
             </div>
-            <div class="card-body">
-                <!-- <a href="/pengaduan" class="btn btn-primary">Kembali</a> -->
-                <br />
-                <br />
+        </div>
+        <div class="card mt-5">
+            <div class="card">
+                <div class="card-body">
 
-                <form method="post" action="/pengaduan/store" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('pengaduan.store') }}" enctype="multipart/form-data">
 
-                    {{ csrf_field() }}
+                        {{ csrf_field() }}
 
-                    <!-- <form class="form-horizontal" action="/pengaduan/store" method="post"> {{ csrf_field() }} -->
+                        <!-- <form class="form-horizontal" action="/pengaduan/store" method="post"> {{ csrf_field() }} -->
 
-                    <!-- <form method="post" action="/pengaduan/store" enctype="multipart/form-data"> {{ csrf_field() }} -->
+                        <!-- <form method="post" action="/pengaduan/store" enctype="multipart/form-data"> {{ csrf_field() }} -->
 
-                    <div class="form-group">
-                        <label>Tanggal Pengaduan</label>
-                        <input type="date" class="form-control" name="tgl_pengaduan">
+                        <div class="form-group col-12">
+                            <label>Tanggal Pengaduan</label>
+                            <input type="date" class="form-control" name="tgl_pengaduan">
 
-                        @if ($errors->has('tgl_pengaduan'))
-                        <div class="date-danger">
-                            {{ $errors->first('tgl_pengaduan') }}
+                            @if ($errors->has('tgl_pengaduan'))
+                            <div class="date-danger">
+                                {{ $errors->first('tgl_pengaduan') }}
+                            </div>
+                            @endif
+
                         </div>
-                        @endif
 
-                    </div>
+                        <!-- <div class="form-group col-12">
+                            <label>NIK</label>
+                            <input type="number" class="form-control" name="nik" placeholder="Masukan NIK">
 
-                    <div class="form-group">
-                        <label>NIK</label>
-                        <input type="number" class="form-control" name="nik" placeholder="Masukan NIK">
+                            @if ($errors->has('nik'))
+                            <div class="number-danger">
+                                {{ $errors->first('nik') }}
+                            </div>
+                            @endif
 
-                        @if ($errors->has('nik'))
-                        <div class="number-danger">
-                            {{ $errors->first('nik') }}
+                        </div> -->
+
+                        <div class="form-group col-12">
+                            <label>Isi Pengaduan</label>
+                            <textarea name="isi_laporan" class="form-control" placeholder="Masukkan Isi Pengaduan"></textarea>
+
+                            @if($errors->has('isi_laporan'))
+                            <div class="text-danger">
+                                {{ $errors->first('isi_laporan')}}
+                            </div>
+                            @endif
+
                         </div>
-                        @endif
 
-                    </div>
+                        <div class="form-group col-12">
+                            <label class="form-label" for="foto">Foto Pengaduan</label>
+                            <input type="file" class="form-control" id="select-image" name="foto[]" multiple />
+                            <div class="filearray">
+                            </div>
+                            @if ($errors->has('foto'))
+                            <div class="text-danger">
+                                {{ $errors->first('foto') }}
+                            </div>
+                            @endif
 
-                    <div class="form-group">
-                        <label>Isi Laporan</label>
-                        <textarea name="isi_laporan" class="form-control" placeholder="Isi Laporan"></textarea>
-
-                        @if($errors->has('isi_laporan'))
-                        <div class="text-danger">
-                            {{ $errors->first('isi_laporan')}}
                         </div>
-                        @endif
 
-                    </div>
-
-                    <div class="form-group">
-                        <label>Foto</label>
-                        <input type="file" class="form-control" id="inputGroupFile" name="foto" placeholder="foto">
-
-                        @if ($errors->has('foto'))
-                        <div class="text-danger">
-                            {{ $errors->first('foto') }}
-                        </div>
-                        @endif
-
-                    </div>
-
-                    <!-- <div class="form-group row">
+                        <!-- <div class="form-group row">
                         <label class="control-label col-sm-2">Status</label>
                         <div class="col-sm-10">
                             <label for="status">
@@ -97,30 +98,50 @@
                         </div>
                     </div> -->
 
-                    <div class="form-group">
-                        <label>Status</label>
-                        <br>
-                        <input type="text" name="status" value="Proses" class="form-control" placeholder="Status">
-                        </br>
+                        <!-- <div class="form-group col-12">
+                            <label>Status</label>
+                            <br>
+                            <input type="text" name="status" value="Proses" class="form-control" placeholder="Status">
+                            </br>
 
-                        @if($errors->has('status'))
-                        <div class="text-danger">
-                            {{ $errors->first('status')}}
+                            @if($errors->has('status'))
+                            <div class="text-danger">
+                                {{ $errors->first('status')}}
+                            </div>
+                            @endif
+
+                        </div> -->
+
+                        <div class="form-group col-12">
+                            <a href="{{ route('pengaduan.index')}}" class="btn btn-outline-danger">Kembali</a>
+                            <button type="submit" class="btn btn-outline-primary" onclick="return confirm('Yakin anda ingin menyimpan data tersebut?')">Simpan</i></button>
                         </div>
-                        @endif
-
-                    </div>
-
-                    <div class="form-group">
-                        <a href="{{ route('pengaduan.index')}}" class="btn btn-outline-danger">Kembali</a>
-                        <button type="submit" class="btn btn-outline-primary" onclick="return confirm('Yakin anda ingin menyimpan data tersebut?')">Simpan</i></button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+    $(document).on('ready', () => {
+        $("#select-image").on('change', function() {
+            $(".filearray").empty(); //you can remove this code if you want previous user input
+            for (let i = 0; i < this.files.length; ++i) {
+                let filereader = new FileReader();
+                let $img = jQuery.parseHTML("<img src='' height='100px' widht='50px'> ");
+                filereader.onload = function() {
+                    $img[0].src = this.result;
+                };
+                filereader.readAsDataURL(this.files[i]);
+                $(".filearray").append($img);
+            }
+        });
+    });
+</script>
 
 @endsection

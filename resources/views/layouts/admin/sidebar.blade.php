@@ -29,7 +29,7 @@
             </a>
             <div class="collapse" id='data-user'>
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('petugas.index') }}">Petugas</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('masyarakat.index') }}">Masyarakat</a></li>
                     <!-- <li class="nav-item"> <a class="nav-link" href="{{ route('tanggapan.index') }}">Tanggapan</a></li> -->
                 </ul>
             </div>

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Pengaduan;
-use App\PengaduanImage;
 use Carbon\Carbon;
+use App\Models\Pengaduan_Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 
 class PengaduanController extends Controller
 {
@@ -58,31 +61,29 @@ class PengaduanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+
             'tgl_pengaduan' => 'required',
-            'nik'           => 'required',
-            'isi_laporan'   => 'required',
-            'foto.*'        => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png,|max:2000|required',
-            'status'        => 'required'
+            'isi_laporan' => 'required',
+            'foto.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000|required',
         ]);
 
+        $nik = Auth::user()->nik;
+
         $uniqID = Carbon::now()->timestamp . uniqid();
-
-        // $item = time().rand(100,999).".".$nm->getClientOriginalName();
-
         $data = new Pengaduan;
-        $data->unique_id = $uniqID;
+        $data->unique_id  = $uniqID;
         $data->tgl_pengaduan = $request->tgl_pengaduan;
-        $data->nik = $request->nik;
+        $data->nik = $nik;
         $data->isi_laporan = $request->isi_laporan;
 
         foreach ($request->foto as $key => $image) {
-            $pimage = new PengaduanImage();
-            $pimage->Pengaduan_unique_id = $uniqID;
+            $pimage = new Pengaduan_Image();
+            $pimage->pengaduan_unique_id = $uniqID;
 
             $imageName = Carbon::now()->timestamp . $key . '.' . $request->foto[$key]->extension();
             $request->foto[$key]->move(public_path("images"), $imageName);
 
-            $pimage->image = $imageName;
+            $pimage->foto = $imageName;
             $pimage->save();
         }
         $data->save();

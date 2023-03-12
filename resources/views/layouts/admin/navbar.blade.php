@@ -70,9 +70,9 @@
             </li>
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <img src="#" alt="profile" />
+                    <img src="{{ asset('/images/auth/profile.jpg') }}" alt="profile" />
                 </a>
-                
+
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
 
                     <a class="dropdown-item">
@@ -80,14 +80,13 @@
                         Settings
                     </a>
 
-                    <a class="dropdown-item">
-                        <a href="{{ route('logout') }}" class="nav-link">
-                            <i class="ti-power-off text-primary"></i>   
-                            Logout
-                        </a>
+                    <a class="dropdown-item nav-link" href="{{ route('logout') }}">
+                        <i class="ti-power-off text-primary"></i>
+                        Logout
                     </a>
 
                 </div>
+
             </li>
 
             <li class="nav-item nav-settings d-none d-lg-flex">

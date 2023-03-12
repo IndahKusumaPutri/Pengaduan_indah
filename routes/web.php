@@ -14,14 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing_page');
 });
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
-Route::get('/petugas','AuthController@indexPetugas')->name('petugas.index');
-Route::get('/petugas/create','AuthController@create')->name('petugas.create');
-Route::post('/petugas/store','AuthController@store')->name('petugas.store');
+Route::get('/petugas','AuthController@indexMasyarakat')->name('masyarakat.index');
+Route::get('/masyarakat/create','AuthController@create')->name('masyarakat.create');
+Route::post('/masyarakat/store','AuthController@store')->name('masyarakat.store');
 
 //indoregion
 Route::post('getKota', 'AuthController@getKota')->name('getKota');//getkota
@@ -38,7 +38,7 @@ Route::get('/logout', 'AuthController@logout')->middleware('auth')->name('logout
 //pengaduan
 Route::get('/pengaduan', 'PengaduanController@index')->name('pengaduan.index');
 Route::get('/pengaduan/create', 'PengaduanController@create');
-Route::post('/pengaduan/store', 'PengaduanController@store');
+Route::post('/pengaduan/store', 'PengaduanController@store')->name('pengaduan.store');
 Route::get('/pengaduan/edit/{id}', 'PengaduanController@edit')->name('pengaduan.edit');
 Route::get('/pengaduan/update/{id}', 'PengaduanController@update')->name('pengaduan.update');
 Route::delete('/pengaduan/delete/{id}', 'PengaduanController@destroy')->name('pengaduan.destroy');

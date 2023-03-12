@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
 
@@ -19,7 +19,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h3 class="font-weight-bold">Data Petugas</h3>
+                            <h3 class="font-weight-bold">Data Masyarakat</h3>
                         </div>
 
                         @if (session('Data dihapus'))
@@ -43,7 +43,7 @@
                         <div class="container">
                             <div class="card mt-5">
                                 <div class="card-body">
-                                    <a href="{{ route('petugas.create') }}" class="btn btn-primary">Tambah Data</a>
+                                    <a href="{{ route('masyarakat.create') }}" class="btn btn-primary">Tambah Data</a>
                                     <br />
                                     <br />
                                     <table class="table table-bordered table-hover table-striped">
@@ -64,7 +64,7 @@
 
                                         </thead>
                                         <tbody>
-                                            @foreach ($petugas as $i => $p)
+                                            @foreach ($masyarakat as $i => $p)
 
                                             <tr>
                                                 <td>{{ $i + 1 }}</td>

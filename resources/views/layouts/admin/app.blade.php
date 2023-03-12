@@ -25,7 +25,7 @@
 <body>
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
-        @include('layouts.navbar')
+        @include('layouts.admin.navbar')
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_settings-panel.html -->
@@ -54,7 +54,7 @@
             <!-- partial -->
 
             <!-- partial:partials/_sidebar.html -->
-            @include('layouts.sidebar')
+            @include('layouts.admin.sidebar')
 
             <!-- partial -->
             <div class="content-wrapper">
@@ -97,14 +97,14 @@
         <script src="{{ asset('js/Chart.roundedBarCharts.js') }}"></script>
         <!-- End custom js for this page-->
         <script>
-            $(function () {
-              $.ajaxSetup({
-                  headers: {
-                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-                  }
-              });
+            $(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
             });
-            </script>
+        </script>
 </body>
 
 </html>

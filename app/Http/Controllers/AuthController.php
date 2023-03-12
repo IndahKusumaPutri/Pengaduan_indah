@@ -12,7 +12,6 @@ use App\Models\Province;
 use App\Models\District;
 use App\Models\Regency;
 use App\Models\Village;
-use App\Petugas;
 use App\User;
 
 
@@ -107,21 +106,21 @@ class AuthController extends Controller
         return redirect('/auth/profile')->with('Data diedit', 'Data berhasil diedit');
     }
 
-    public function indexPetugas()
+    public function indexMasyarakat()
     {
-        $petugas = Petugas::all();
-        return view('petugas.index', compact('petugas'));
+        $masyarakat = User::all();
+        return view('masyarakat.index', compact('masyarakat'));
     }
 
     public function create()
     {
         $provinces = Province::all();
-        return view('petugas.create', compact('provinces'));
+        return view('masyarakat.create', compact('provinces'));
     }
     
     public function store(Request $request)
     {
-        $petugas = Petugas::all();
+        $user = User::all();
 
         $this->validate($request,[
             'nik' => 'required|max:16',
@@ -156,7 +155,7 @@ class AuthController extends Controller
         //     'village_id' => ['required'],
         // ]);
 
-        Petugas::create([
+        User::create([
             'nik' => $request->nik,
             'name' => $request->name,
             'email' => $request->email,
@@ -176,11 +175,11 @@ class AuthController extends Controller
             // 'username' => strtolower($petugas['username'])
         ]);
 
-        User::create([
-            'name'      => bcrypt($request->name),
-            'email'     => $request->email,
-            'password'  => bcrypt($request->password)
-        ]);
+        // User::create([
+        //     'name'      => bcrypt($request->name),
+        //     'email'     => $request->email,
+        //     'password'  => bcrypt($request->password)
+        // ]);
 
         return redirect()->route('petugas.index');
     }
